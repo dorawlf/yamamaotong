@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="img/favicon.ico">
   <title>雅玛茂通（大连）贸易有限公司 | YAMAMOTO(DALIAN)TRADING CO.,LTD</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link
@@ -358,7 +359,7 @@
 
     .section-num {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 11px;
+      font-size: 15px;
       color: var(--gold);
       letter-spacing: 0.2em;
     }
@@ -726,6 +727,7 @@
     /* ── ADDRESS BLOCK ── */
     .address-block {
       display: flex;
+      flex-wrap: wrap;
       gap: 80px;
       align-items: flex-start;
       padding: 64px 80px;
@@ -1075,47 +1077,47 @@
   <script src="https://webapi.amap.com/loader.js"></script>
   <script type="text/javascript">
     let amapInstance = null;
-    
+
     function initAMap() {
       AMapLoader.load({
         key: "daf98bed0c6d0537be2b010d351d7898",
         version: "2.0",
-       })
-      .then((AMap) => {
-        const mapContainer = document.getElementById("amap-container");
-        if (mapContainer && !amapInstance) {
-          amapInstance = new AMap.Map("amap-container", {
-            viewMode: '2D',
-            zoom: 18,
-            center: [121.769345, 39.048391],
-          });
-
-          var infoWindow = new AMap.InfoWindow({
-            content: "<p class='info-window'>雅玛茂通（大连）贸易有限公司</p>",
-            position: [121.769345, 39.048391],
-          });
-
-          infoWindow.open(amapInstance);
-        }
       })
-      .catch((e) => {
-        console.error(e);
-      });
+        .then((AMap) => {
+          const mapContainer = document.getElementById("amap-container");
+          if (mapContainer && !amapInstance) {
+            amapInstance = new AMap.Map("amap-container", {
+              viewMode: '2D',
+              zoom: 18,
+              center: [121.769345, 39.048391],
+            });
+
+            var infoWindow = new AMap.InfoWindow({
+              content: "<p class='info-window'>雅玛茂通（大连）贸易有限公司</p>",
+              position: [121.769345, 39.048391],
+            });
+
+            infoWindow.open(amapInstance);
+          }
+        })
+        .catch((e) => {
+          console.error(e);
+        });
     }
-    
+
     // Initialize map after DOM is ready
     if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', function() {
+      document.addEventListener('DOMContentLoaded', function () {
         setTimeout(initAMap, 300);
       });
     } else {
       setTimeout(initAMap, 300);
     }
-    
+
     // Handle window resize to properly resize map
-    window.addEventListener('resize', function() {
+    window.addEventListener('resize', function () {
       if (amapInstance) {
-        setTimeout(function() {
+        setTimeout(function () {
           amapInstance.resize();
         }, 100);
       }
@@ -1300,8 +1302,8 @@
   <section class="gallery-section" id="gallery">
     <div class="section-header reveal">
       <div>
-        <div class="section-title">Product Gallery</div>
-        <div class="section-title-jp">製品ギャラリー</div>
+        <div class="section-title">Gallery</div>
+        <div class="section-title-jp">ギャラリー</div>
       </div>
     </div>
 
@@ -1458,6 +1460,24 @@
       <span class="address-value">
         TEL　0411-87539484<br>
         FAX　0411-87539217
+      </span>
+    </div>
+    <div class="address-item">
+      <span class="address-label">Contact (JP)</span>
+      <span class="address-value">
+        《日本側連絡窓口》<br>
+        担当：江見<br>
+        E-mail : <a href="mailto:c_emi_yamamoto@yahoo.co.jp"
+          style="color:inherit; text-decoration:none;">c_emi_yamamoto@yahoo.co.jp</a>
+      </span>
+    </div>
+    <div class="address-item">
+      <span class="address-label">Contact (CN)</span>
+      <span class="address-value">
+        《中国側連絡窓口》<br>
+        担当：王立華<br>
+        E-mail : <a href="mailto:wangllijp@yahoo.co.jp"
+          style="color:inherit; text-decoration:none;">wangllijp@yahoo.co.jp</a>
       </span>
     </div>
     <div class="address-item">
