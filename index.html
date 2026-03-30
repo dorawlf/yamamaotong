@@ -1,0 +1,1693 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>雅玛茂通（大连）贸易有限公司 | YAMAMOTO(DALIAN)TRADING CO.,LTD</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600&family=Noto+Sans+JP:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --ink: #1a1a1a;
+      --ash: #6b6b6b;
+      --mist: #f4f2ef;
+      --paper: #faf9f7;
+      --gold: #b8966e;
+      --gold-light: #d4b896;
+      --white: #ffffff;
+      --line: rgba(26, 26, 26, 0.12);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background: var(--paper);
+      color: var(--ink);
+      font-weight: 300;
+      overflow-x: hidden;
+    }
+
+    /* ── HEADER ── */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 48px;
+      height: 72px;
+      background: rgba(250, 249, 247, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .logo-mark {
+      width: 36px;
+      height: 36px;
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.15;
+    }
+
+    .logo-text .jp {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 11px;
+      font-weight: 400;
+      color: var(--ash);
+      letter-spacing: 0.15em;
+    }
+
+    .logo-text .en {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      font-weight: 300;
+      letter-spacing: 0.08em;
+      color: var(--ink);
+    }
+
+    nav {
+      display: flex;
+      gap: 36px;
+      align-items: center;
+    }
+
+    /* ensure hamburger hidden on desktop */
+    @media (min-width: 901px) {
+      .hamburger {
+        display: none !important;
+      }
+
+      .mobile-nav {
+        display: none !important;
+      }
+    }
+
+    nav a {
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      color: var(--ash);
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: color 0.3s;
+      font-weight: 400;
+    }
+
+    nav a:hover {
+      color: var(--gold);
+    }
+
+    /* ── HAMBURGER (mobile) ── */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 36px;
+      height: 36px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      z-index: 200;
+    }
+
+    .hamburger span {
+      display: block;
+      height: 1px;
+      background: var(--ink);
+      transition: all 0.35s ease;
+      transform-origin: center;
+    }
+
+    .hamburger.open span:nth-child(1) {
+      transform: translateY(6px) rotate(45deg);
+    }
+
+    .hamburger.open span:nth-child(2) {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+
+    .hamburger.open span:nth-child(3) {
+      transform: translateY(-6px) rotate(-45deg);
+    }
+
+    /* Mobile nav drawer */
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      top: 72px;
+      left: 0;
+      right: 0;
+      background: rgba(250, 249, 247, 0.97);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--line);
+      flex-direction: column;
+      padding: 20px 0 28px;
+      z-index: 99;
+      transform: translateY(-10px);
+      opacity: 0;
+      transition: transform 0.35s ease, opacity 0.35s ease;
+      pointer-events: none;
+    }
+
+    .mobile-nav.open {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .mobile-nav a {
+      display: block;
+      padding: 14px 28px;
+      font-size: 12px;
+      letter-spacing: 0.22em;
+      color: var(--ash);
+      text-decoration: none;
+      text-transform: uppercase;
+      font-weight: 400;
+      border-bottom: 1px solid var(--line);
+      transition: color 0.2s, padding-left 0.2s;
+    }
+
+    .mobile-nav a:last-child {
+      border-bottom: none;
+    }
+
+    .mobile-nav a:hover {
+      color: var(--gold);
+      padding-left: 36px;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      padding-top: 72px;
+      height: 100vh;
+      min-height: 640px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding-left: 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(135deg, rgba(184, 150, 110, 0.06) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 50%, rgba(184, 150, 110, 0.08) 0%, transparent 60%);
+    }
+
+    /* Decorative vertical rule */
+    .hero::before {
+      content: '';
+      position: absolute;
+      left: 48px;
+      top: 20%;
+      bottom: 20%;
+      width: 1px;
+      background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+    }
+
+    .hero-label {
+      font-size: 10px;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 28px;
+      font-weight: 400;
+    }
+
+    .hero-video-wrap {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      overflow: hidden;
+      background: var(--paper);
+    }
+
+    .hero-video-wrap video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: left center;
+      opacity: 0.25;
+      /* "虚化" - subtle blur for immersion */
+      filter: blur(1px) grayscale(20%);
+      /* Fading edges for the "immersive" feel */
+      mask-image: radial-gradient(circle at 20% 50%, black 0%, transparent 80%);
+      -webkit-mask-image: radial-gradient(circle at 20% 50%, black 0%, transparent 80%);
+    }
+
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(42px, 6vw, 30px);
+      font-weight: 300;
+      line-height: 1.15;
+      color: var(--ink);
+      margin-bottom: 8px;
+      animation: fadeUp 1s ease both;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .hero-subtitle {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(14px, 2vw, 20px);
+      font-weight: 300;
+      color: var(--ash);
+      letter-spacing: 0.12em;
+      margin-bottom: 48px;
+      animation: fadeUp 1s 0.15s ease both;
+    }
+
+    .hero-info {
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      color: var(--ash);
+      line-height: 2;
+      animation: fadeUp 1s 0.3s ease both;
+      border-left: 2px solid var(--gold-light);
+      padding-left: 20px;
+    }
+
+    .hero-info a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 40px;
+      right: 48px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      font-size: 9px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--ash);
+    }
+
+    .hero-scroll::after {
+      content: '';
+      width: 1px;
+      height: 60px;
+      background: linear-gradient(to bottom, var(--gold), transparent);
+      animation: scrollLine 2s ease-in-out infinite;
+    }
+
+    @keyframes scrollLine {
+
+      0%,
+      100% {
+        opacity: 0.4;
+        transform: scaleY(1);
+        transform-origin: top;
+      }
+
+      50% {
+        opacity: 1;
+      }
+    }
+
+    /* ── SECTION COMMON ── */
+    section {
+      padding: 100px 80px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 24px;
+      margin-bottom: 60px;
+    }
+
+    .section-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 11px;
+      color: var(--gold);
+      letter-spacing: 0.2em;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 32px;
+      font-weight: 300;
+      letter-spacing: 0.06em;
+      color: var(--ink);
+    }
+
+    .section-title-jp {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--ash);
+      margin-top: 6px;
+      letter-spacing: 0.15em;
+    }
+
+    .divider {
+      width: 48px;
+      height: 1px;
+      background: var(--gold);
+      margin: 20px 0;
+    }
+
+    /* ── AUTO SLIDESHOW ── */
+    .slideshow-section {
+      background: var(--ink);
+      padding: 0;
+      position: relative;
+    }
+
+    .slideshow-wrapper {
+      position: relative;
+      overflow: hidden;
+      height: 520px;
+    }
+
+    .slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 1.2s ease;
+      display: flex;
+    }
+
+    .slide.active {
+      opacity: 1;
+    }
+
+    .slide-bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      filter: brightness(0.55);
+      transition: transform 6s ease;
+    }
+
+    .slide.active .slide-bg {
+      transform: scale(1.04);
+    }
+
+    .slide-content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 60px 80px;
+      width: 100%;
+    }
+
+    .slide-tag {
+      font-size: 10px;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 14px;
+    }
+
+    .slide-label {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 36px;
+      font-weight: 300;
+      color: #fff;
+      letter-spacing: 0.06em;
+      font-variant-numeric: lining-nums;
+    }
+
+    .slide-dots {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 12px;
+      z-index: 10;
+    }
+
+    .dot {
+      width: 40px;
+      height: 3px;
+      background: rgba(255, 255, 255, 0.2);
+      cursor: pointer;
+      border-radius: 2px;
+      transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+
+    .dot.active {
+      background: var(--gold);
+      width: 80px;
+    }
+
+    /* ── GALLERY GRID ── */
+    .gallery-section {
+      background: var(--mist);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(11, 1fr);
+      gap: 3px;
+    }
+
+    .gallery-grid.row2 {
+      margin-top: 3px;
+    }
+
+    .gallery-grid.row3 {
+      margin-top: 3px;
+    }
+
+    .gallery-item {
+      aspect-ratio: 4/3;
+      overflow: hidden;
+      cursor: pointer;
+      position: relative;
+      background: #ccc;
+    }
+
+    .gallery-item img,
+    .gallery-item video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+      display: block;
+    }
+
+    .gallery-item:hover img,
+    .gallery-item:hover video {
+      transform: scale(1.08);
+    }
+
+    .gallery-item::after {
+      content: '＋';
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      color: white;
+      background: rgba(26, 26, 26, 0.45);
+      opacity: 0;
+      transition: opacity 0.3s;
+      font-weight: 100;
+      z-index: 2;
+    }
+
+    .gallery-item.video-item::after {
+      content: '▶';
+      opacity: 1;
+      /* Always show play icon for videos */
+      background: rgba(26, 26, 26, 0.2);
+      font-size: 22px;
+      padding-left: 4px;
+      /* Optical centering for the play triangle */
+    }
+
+    .gallery-item.video-item:hover::after {
+      background: rgba(26, 26, 26, 0.45);
+      transform: scale(1.1);
+    }
+
+    .gallery-item:hover::after {
+      opacity: 1;
+    }
+
+    /* PLACEHOLDER image style */
+    .gallery-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      color: #999;
+      background: #e8e6e3;
+    }
+
+    /* ── LIGHTBOX ── */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 999;
+      background: rgba(15, 15, 15, 0.92);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s;
+    }
+
+    .lightbox.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .lightbox-inner {
+      max-width: 90vw;
+      max-height: 88vh;
+      position: relative;
+    }
+
+    .lightbox-inner img,
+    .lightbox-inner video {
+      max-width: 90vw;
+      max-height: 85vh;
+      display: block;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .lb-close {
+      position: absolute;
+      top: -44px;
+      right: 0;
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 24px;
+      cursor: pointer;
+      font-weight: 100;
+      opacity: 0.7;
+      transition: opacity 0.2s;
+    }
+
+    .lb-close:hover {
+      opacity: 1;
+    }
+
+    /* ── MAP ── */
+    .map-section {
+      padding: 100px 0 0;
+    }
+
+    .map-section .inner {
+      padding: 0 80px;
+    }
+
+    #yahoo-map {
+      width: 100%;
+      height: 480px;
+      margin-top: 48px;
+      border: none;
+    }
+
+    /* Fallback static map */
+    .map-fallback {
+      width: 100%;
+      height: 480px;
+      margin-top: 48px;
+      background: #e8e6e3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      color: var(--ash);
+      font-size: 13px;
+      letter-spacing: 0.1em;
+    }
+
+    .map-pin-svg {
+      opacity: 0.5;
+    }
+
+    .map-building-wrap {
+      display: flex;
+      gap: 32px;
+      padding: 0 80px;
+      margin-top: 48px;
+    }
+
+    .map-container {
+      flex: 1;
+      height: 480px;
+      min-height: 280px;
+      overflow: hidden;
+      border-radius: 2px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .company-building-img {
+      flex: 1;
+      height: 480px;
+      overflow: hidden;
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .company-building-img {
+      position: relative;
+    }
+
+    .company-building-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    @media (max-width: 1100px) {
+      .map-building-wrap {
+        padding: 0 40px;
+        gap: 24px;
+      }
+
+      .map-container,
+      .company-building-img {
+        height: 360px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .map-building-wrap {
+        flex-direction: column;
+        padding: 0 20px;
+        gap: 16px;
+      }
+
+      .map-container {
+        width: 100%;
+        height: 280px;
+        flex: none;
+      }
+
+      .company-building-img {
+        width: 100%;
+        height: 280px;
+        flex: none;
+      }
+    }
+
+    /* ── ADDRESS BLOCK ── */
+    .address-block {
+      display: flex;
+      gap: 80px;
+      align-items: flex-start;
+      padding: 64px 80px;
+    }
+
+    .address-item {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .address-label {
+      font-size: 9px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 400;
+    }
+
+    .address-value {
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      color: var(--ink);
+      line-height: 1.8;
+    }
+
+    .address-qr-code {
+      font-size: 9px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 400;
+    }
+
+    .address-qr-code-img-container {
+      width: 50px;
+      height: 50px;
+    }
+
+    .address-qr-code-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* ── MAP INFO WINDOW ── */
+    .info-window {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 13px;
+      font-weight: 300;
+      color: #1a1a1a;
+      letter-spacing: 0.08em;
+      line-height: 1.8;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--ink);
+      padding: 48px 80px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 15px;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.6);
+      letter-spacing: 0.1em;
+    }
+
+    .footer-copy {
+      font-size: 10px;
+      color: rgba(255, 255, 255, 0.3);
+      letter-spacing: 0.12em;
+    }
+
+    .footer-link {
+      font-size: 11px;
+      color: var(--gold-light);
+      text-decoration: none;
+      letter-spacing: 0.12em;
+      opacity: 0.8;
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* SVG Logo */
+    .y-logo path {
+      transition: fill 0.3s;
+    }
+
+    /* ══════════════════════════════
+     RESPONSIVE — TABLET ≤ 900px
+  ══════════════════════════════ */
+    @media (max-width: 900px) {
+      header {
+        padding: 0 24px;
+      }
+
+      nav {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .mobile-nav {
+        display: flex;
+      }
+
+      .hero {
+        padding-left: 48px;
+        min-height: 560px;
+      }
+
+      .hero::before {
+        left: 24px;
+      }
+
+      section {
+        padding: 72px 40px;
+      }
+
+      .map-section .inner {
+        padding: 0 40px;
+      }
+
+      .address-block {
+        padding: 48px 40px;
+        flex-wrap: wrap;
+        gap: 40px;
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .slideshow-wrapper {
+        height: 400px;
+      }
+
+      .slide-content {
+        padding: 40px;
+      }
+
+      .slide-label {
+        font-size: 26px;
+      }
+
+      footer {
+        padding: 36px 40px;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+
+      .footer-logo {
+        font-size: 13px;
+      }
+    }
+
+    /* ══════════════════════════════
+     RESPONSIVE — MOBILE ≤ 600px
+  ══════════════════════════════ */
+    @media (max-width: 600px) {
+      header {
+        padding: 0 20px;
+        height: 60px;
+      }
+
+      .logo-text .en {
+        font-size: 14px;
+      }
+
+      .logo-text .jp {
+        font-size: 9px;
+        letter-spacing: 0.08em;
+      }
+
+      .logo-mark {
+        width: 28px;
+        height: 28px;
+      }
+
+      .mobile-nav {
+        top: 60px;
+      }
+
+      .hero {
+        padding-left: 28px;
+        padding-right: 20px;
+        padding-top: 60px;
+        min-height: 100svh;
+        justify-content: center;
+      }
+
+      .hero::before {
+        left: 16px;
+      }
+
+      .hero-label {
+        font-size: 9px;
+        letter-spacing: 0.2em;
+        margin-bottom: 16px;
+      }
+
+      .hero-title {
+        font-size: clamp(36px, 11vw, 56px);
+      }
+
+      .hero-subtitle {
+        font-size: 13px;
+        margin-bottom: 32px;
+      }
+
+      .hero-info {
+        font-size: 10px;
+        line-height: 1.9;
+      }
+
+      .hero-scroll {
+        right: 20px;
+        bottom: 24px;
+      }
+
+      section {
+        padding: 56px 20px;
+      }
+
+      .section-title {
+        font-size: 24px;
+      }
+
+      .section-header {
+        gap: 14px;
+        margin-bottom: 36px;
+      }
+
+      .map-section .inner {
+        padding: 0 20px;
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .gallery-item {
+        aspect-ratio: 1/1;
+      }
+
+      .gallery-placeholder {
+        font-size: 9px;
+        padding: 8px;
+        text-align: center;
+      }
+
+      .slideshow-wrapper {
+        height: 550px;
+      }
+
+      .slide-content {
+        padding: 24px 20px;
+      }
+
+      .slide-tag {
+        font-size: 9px;
+        letter-spacing: 0.2em;
+        margin-bottom: 8px;
+      }
+
+      .slide-label {
+        font-size: 20px;
+      }
+
+      .slide-dots {
+        bottom: 20px;
+      }
+
+      #yahoo-map {
+        height: 300px;
+      }
+
+      .map-fallback {
+        height: 300px;
+      }
+
+      .address-block {
+        flex-direction: column;
+        gap: 28px;
+        padding: 40px 20px;
+      }
+
+      footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 32px 20px;
+      }
+
+      .footer-copy {
+        font-size: 9px;
+      }
+
+      .lightbox-inner {
+        max-width: 96vw;
+      }
+
+      .lb-close {
+        top: -36px;
+        font-size: 20px;
+      }
+    }
+  </style>
+  <script type="text/javascript"
+    src="https://api.map.baidu.com/api?v=2.0&ak=l8R7QaoiooQ6Le6bGuoB8MpCGz9fagrp&s=1"></script>
+  <script type="text/javascript">
+    window._AMapSecurityConfig = {
+      securityJsCode: "7253490fd0c8186ef4750e590d9ccf26",
+    };
+  </script>
+  <script src="https://webapi.amap.com/loader.js"></script>
+  <script type="text/javascript">
+    let amapInstance = null;
+    
+    function initAMap() {
+      AMapLoader.load({
+        key: "daf98bed0c6d0537be2b010d351d7898",
+        version: "2.0",
+       })
+      .then((AMap) => {
+        const mapContainer = document.getElementById("amap-container");
+        if (mapContainer && !amapInstance) {
+          amapInstance = new AMap.Map("amap-container", {
+            viewMode: '2D',
+            zoom: 18,
+            center: [121.769345, 39.048391],
+          });
+
+          var infoWindow = new AMap.InfoWindow({
+            content: "<p class='info-window'>雅玛茂通（大连）贸易有限公司</p>",
+            position: [121.769345, 39.048391],
+          });
+
+          infoWindow.open(amapInstance);
+        }
+      })
+      .catch((e) => {
+        console.error(e);
+      });
+    }
+    
+    // Initialize map after DOM is ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(initAMap, 300);
+      });
+    } else {
+      setTimeout(initAMap, 300);
+    }
+    
+    // Handle window resize to properly resize map
+    window.addEventListener('resize', function() {
+      if (amapInstance) {
+        setTimeout(function() {
+          amapInstance.resize();
+        }, 100);
+      }
+    });
+  </script>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo-wrap">
+      <img src="img/logo.png" alt="YAMAMOTO(DALIAN)TRADING CO.,LTD Logo" class="logo-mark y-logo">
+      <div class="logo-text">
+        <span class="jp">雅玛茂通（大连）贸易有限公司</span>
+        <span class="en">YAMAMOTO(DALIAN)TRADING CO.,LTD</span>
+      </div>
+    </div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#products">Products</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#access">Access</a>
+      <a href="http://www.yamamaotong.com" target="_blank">Website</a>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="メニュー" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#about" onclick="closeMenu()">About</a>
+    <a href="#products" onclick="closeMenu()">Products</a>
+    <a href="#gallery" onclick="closeMenu()">Gallery</a>
+    <a href="#access" onclick="closeMenu()">Access</a>
+    <a href="http://www.yamamaotong.com" target="_blank" onclick="closeMenu()">Website ↗</a>
+  </div>
+
+
+
+  <!-- HERO -->
+  <section class="hero" id="about">
+    <div class="hero-video-wrap">
+      <video src="img/hero-vedio.webm" autoplay loop muted playsinline></video>
+    </div>
+    <div class="hero-bg"></div>
+    <div class="hero-label">Dalian Development Zone</div>
+    <h1 class="hero-title">雅玛茂通（大连）贸易有限公司</h1>
+    <p class="hero-subtitle">YAMAMOTO(DALIAN)TRADING CO.,LTD</p>
+    <div class="hero-info">
+      <div>大連市金馬路君悦豪庭 152号 1012室</div>
+      <div>ROOM 10-12, JUNYUE HAO TING 152, JINMA ROAD</div>
+      <div>TEL: 0411-87539484　FAX: 0411-87539217</div>
+      <div style="margin-top:8px"><a href="http://www.yamamaotong.com" target="_blank">www.yamamaotong.com</a></div>
+    </div>
+    <div class="hero-scroll">Scroll</div>
+  </section>
+
+  <!-- AUTO SLIDESHOW -->
+  <div class="slideshow-section" id="products">
+    <div class="slideshow-wrapper">
+      <div class="slide active">
+        <div class="slide-bg"
+          style="background-color:#1e2a1e; background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22><rect fill=%22%231e2a1e%22 width=%22400%22 height=%22300%22/><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23446644%22 font-size=%2218%22 font-family=%22sans-serif%22>会社紹介</text></svg>');">
+        </div>
+        <div class="slide-content">
+          <div class="slide-tag"></div>
+          <div class="slide-label">弊社は2010年に設立した100%日系独資の機械商社で、中国東北部の大連に所在します。</div>
+        </div>
+      </div>
+
+      <div class="slide">
+        <div class="slide-bg"
+          style="background-color:#1e2a1e; background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22><rect fill=%22%231e2a1e%22 width=%22400%22 height=%22300%22/><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23446644%22 font-size=%2218%22 font-family=%22sans-serif%22>事業内容</text></svg>');">
+        </div>
+        <div class="slide-content" style="justify-content:center; padding-bottom:80px;">
+          <div class="slide-tag" style="margin-bottom:32px; font-size:11px;">事業内容 — Business Overview</div>
+          <ol style="list-style:none; display:flex; flex-direction:column; gap:28px; max-width:680px;">
+            <li style="display:flex; gap:20px; align-items:flex-start;">
+              <span
+                style="font-family:'Cormorant Garamond',serif; font-size:28px; color:var(--gold); line-height:1; flex-shrink:0; margin-top:2px;">1</span>
+              <div>
+                <div
+                  style="font-family:'Noto Serif JP',serif; font-size:15px; color:#fff; font-weight:300; line-height:1.8; letter-spacing:0.08em;">
+                  日本製・中国製の工作機械及び周辺機器の販売</div>
+                <div
+                  style="font-size:10px; color:rgba(255,255,255,0.38); letter-spacing:0.18em; margin-top:4px; text-transform:uppercase;">
+                  Sales of Japanese &amp; Chinese Machine Tools</div>
+              </div>
+            </li>
+            <li style="display:flex; gap:20px; align-items:flex-start;">
+              <span
+                style="font-family:'Cormorant Garamond',serif; font-size:28px; color:var(--gold); line-height:1; flex-shrink:0; margin-top:2px;">2</span>
+              <div>
+                <div
+                  style="font-family:'Noto Serif JP',serif; font-size:15px; color:#fff; font-weight:300; line-height:1.8; letter-spacing:0.08em;">
+                  搬送機・検査機・洗浄機等の専用設計機の販売</div>
+                <div
+                  style="font-size:10px; color:rgba(255,255,255,0.38); letter-spacing:0.18em; margin-top:4px; text-transform:uppercase;">
+                  Custom Conveyors, Inspection &amp; Cleaning Systems</div>
+              </div>
+            </li>
+            <li style="display:flex; gap:20px; align-items:flex-start;">
+              <span
+                style="font-family:'Cormorant Garamond',serif; font-size:28px; color:var(--gold); line-height:1; flex-shrink:0; margin-top:2px;">3</span>
+              <div>
+                <div
+                  style="font-family:'Noto Serif JP',serif; font-size:15px; color:#fff; font-weight:300; line-height:1.8; letter-spacing:0.08em;">
+                  日本向け・中国国内向けの部品加工請負<br><span
+                    style="font-size:13px; color:rgba(255,255,255,0.6);">（中国国内の協力工場にて対応）</span></div>
+                <div
+                  style="font-size:10px; color:rgba(255,255,255,0.38); letter-spacing:0.18em; margin-top:4px; text-transform:uppercase;">
+                  Parts Processing for Japan &amp; China via Partner Factories</div>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="slide">
+        <div class="slide-bg" style="background-color:#141a14;"></div>
+        <div class="slide-content"
+          style="justify-content:center; padding-top:40px; padding-bottom:60px; overflow-y:auto;">
+          <div class="slide-tag" style="margin-bottom:20px; font-size:11px; letter-spacing:0.28em;">各種加工品の製作を承ります</div>
+          <div style="max-width:720px; display:flex; flex-direction:column; gap:18px;">
+
+            <!-- Concern box -->
+            <div
+              style="border-left:2px solid var(--gold); padding:16px 20px; background:rgba(184,150,110,0.07); border-radius:0 4px 4px 0;">
+              <div
+                style="font-size:9px; letter-spacing:0.3em; text-transform:uppercase; color:var(--gold-light); margin-bottom:10px;">
+                よくあるご不安 — Common Concerns</div>
+              <div
+                style="font-family:'Noto Serif JP',serif; font-size:13px; color:rgba(255,255,255,0.75); line-height:2; letter-spacing:0.07em;">
+                中国での部品製作を検討したいが、品質・納期・支払い等でトラブルにならないか心配…<br>
+                言葉の問題で、正しく意思疎通が取れるか心配…
+              </div>
+            </div>
+
+            <!-- Response -->
+            <div
+              style="font-family:'Noto Serif JP',serif; font-size:13px; color:rgba(255,255,255,0.82); line-height:2.1; letter-spacing:0.07em;">
+              そのようなお客様に、<span style="color:var(--gold-light);">誠意を持って対応</span>させて頂きます。<br>
+              弊社提携先はすべて近隣に所在しており、加工状況・納期・品質を定期的に確認・ご報告いたします。詳細なお打合せが必要な場合はWeb等にて迅速に対応可能です。
+            </div>
+
+            <!-- Capabilities -->
+            <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:2px;">
+              <span
+                style="font-size:10px; letter-spacing:0.12em; color:rgba(255,255,255,0.55); border:1px solid rgba(255,255,255,0.15); padding:5px 12px; border-radius:2px;">単品・小ロット</span>
+              <span
+                style="font-size:10px; letter-spacing:0.12em; color:rgba(255,255,255,0.55); border:1px solid rgba(255,255,255,0.15); padding:5px 12px; border-radius:2px;">治具・金型部品</span>
+              <span
+                style="font-size:10px; letter-spacing:0.12em; color:rgba(255,255,255,0.55); border:1px solid rgba(255,255,255,0.15); padding:5px 12px; border-radius:2px;">熱処理・表面処理</span>
+              <span
+                style="font-size:10px; letter-spacing:0.12em; color:rgba(255,255,255,0.55); border:1px solid rgba(255,255,255,0.15); padding:5px 12px; border-radius:2px;">マシニングセンタ加工</span>
+              <span
+                style="font-size:10px; letter-spacing:0.12em; color:rgba(255,255,255,0.55); border:1px solid rgba(255,255,255,0.15); padding:5px 12px; border-radius:2px;">平面研磨</span>
+              <span
+                style="font-size:10px; letter-spacing:0.12em; color:rgba(255,255,255,0.55); border:1px solid rgba(255,255,255,0.15); padding:5px 12px; border-radius:2px;">放電・ワイヤーカット</span>
+              <span
+                style="font-size:10px; letter-spacing:0.12em; color:rgba(255,255,255,0.55); border:1px solid rgba(255,255,255,0.15); padding:5px 12px; border-radius:2px;">精密部品加工</span>
+            </div>
+
+            <div
+              style="font-family:'Noto Serif JP',serif; font-size:13px; color:var(--gold-light); letter-spacing:0.1em; margin-top:4px;">
+              是非ともお問合せを賜りたくお願い致します。
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide-dots" onmouseleave="resetTimer()">
+        <div class="dot active" onclick="goSlide(0)" onmouseenter="goSlide(0, true)"></div>
+        <div class="dot" onclick="goSlide(1)" onmouseenter="goSlide(1, true)"></div>
+        <div class="dot" onclick="goSlide(2)" onmouseenter="goSlide(2, true)"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GALLERY -->
+  <section class="gallery-section" id="gallery">
+    <div class="section-header reveal">
+      <div>
+        <div class="section-title">Product Gallery</div>
+        <div class="section-title-jp">製品ギャラリー</div>
+      </div>
+    </div>
+
+    <div class="section-num">01 工作機械の販売: お客様ご要望の価格・性能に合致する工作機械及を選定して対応致します。</div>
+    <div class="gallery-grid" id="galleryGrid">
+      <!-- Row 1: Work Machines -->
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="./img/gallery/work-machine-1.png" alt="工作機械">
+        <div class="gallery-placeholder">工作機械</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="./img/gallery/work-machine-2.png" alt="工作機械">
+        <div class="gallery-placeholder">工作機械</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="./img/gallery/work-machine-3.jpg" alt="工作機械">
+        <div class="gallery-placeholder">工作機械</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="./img/gallery/work-machine-4.jpg" alt="工作機械">
+        <div class="gallery-placeholder">工作機械</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="./img/gallery/work-machine-5.jpg" alt="工作機械">
+        <div class="gallery-placeholder">工作機械</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="./img/gallery/work-machine-6.png" alt="工作機械">
+        <div class="gallery-placeholder">工作機械</div>
+      </div>
+    </div>
+    <br>
+    <div class="section-num">02 専用機械・省力化設備の販売: 各種搬送装置・検査機・洗浄機・省力化機器等、お客様のご要望に対応致します。</div>
+    <div class="gallery-grid row2">
+      <!-- Row 2: Expert Machines -->
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="./img/gallery/expert-machine-1.jpg" alt="工作機械">
+        <div class="gallery-placeholder">専用機械・省力化設備</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="./img/gallery/expert-machine-2.jpg" alt="工作機械">
+        <div class="gallery-placeholder">専用機械・省力化設備</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="./img/gallery/expert-machine-3.jpg" alt="工作機械">
+        <div class="gallery-placeholder">専用機械・省力化設備</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="./img/gallery/expert-machine-4.jpg" alt="工作機械">
+        <div class="gallery-placeholder">専用機械・省力化設備</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="./img/gallery/expert-machine-5.jpg" alt="工作機械">
+        <div class="gallery-placeholder">専用機械・省力化設備</div>
+      </div>
+    </div>
+    <br>
+    <div class="section-num">03 部品加工及び組立(提携協力工場にて): 各種部品・治具・装置の加工、組立等を請け負います。</div>
+    <div class="gallery-grid row3">
+      <!-- Row 3: Parts Tailoring-->
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="./img/gallery/parts-tailoring-1.jpg" alt="部品加工及び組立">
+        <div class="gallery-placeholder">部品加工及び組立</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="./img/gallery/parts-tailoring-2.jpg" alt="部品加工及び組立">
+        <div class="gallery-placeholder">部品加工及び組立</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="./img/gallery/parts-tailoring-3.jpg" alt="部品加工及び組立">
+        <div class="gallery-placeholder">部品加工及び組立</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="./img/gallery/parts-tailoring-4.jpg" alt="部品加工及び組立">
+        <div class="gallery-placeholder">部品加工及び組立</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="./img/gallery/parts-tailoring-5.jpg" alt="部品加工及び組立">
+        <div class="gallery-placeholder">部品加工及び組立</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="./img/gallery/parts-tailoring-6.jpg" alt="部品加工及び組立">
+        <div class="gallery-placeholder">部品加工及び組立</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="./img/gallery/parts-tailoring-7.jpg" alt="部品加工及び組立">
+        <div class="gallery-placeholder">部品加工及び組立</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="./img/gallery/parts-tailoring-8.jpg" alt="部品加工及び組立">
+        <div class="gallery-placeholder">部品加工及び組立</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="./img/gallery/parts-tailoring-9.jpg" alt="部品加工及び組立">
+        <div class="gallery-placeholder">部品加工及び組立</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="./img/gallery/parts-tailoring-10.jpg" alt="部品加工及び組立">
+        <div class="gallery-placeholder">部品加工及び組立</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="./img/gallery/parts-tailoring-11.jpg" alt="部品加工及び組立">
+        <div class="gallery-placeholder">部品加工及び組立</div>
+      </div>
+    </div>
+    <br>
+    <div class="section-num">04 部品加工例</div>
+    <!-- Row 4: Video Example with optimization -->
+    <div class="gallery-grid row4"
+      style="margin-top: 3px; display: grid; grid-template-columns: repeat(5, 1fr); gap: 3px;">
+      <div class="gallery-item video-item" onclick="openLightbox(this)">
+        <!-- preload="metadata" saves bandwidth compared to autoplay -->
+        <video src="./img/gallery/DNL082-Center-drive-turning-machine.mp4" preload="metadata" playsinline
+          alt="部品加工例"></video>
+        <div class="gallery-placeholder" style="display:none;">部品加工例</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAP -->
+  <div class="map-section" id="access">
+    <div class="inner reveal">
+      <div class="section-header">
+        <div>
+          <div class="section-title">Access</div>
+          <div class="section-title-jp">アクセス・所在地</div>
+        </div>
+      </div>
+    </div>
+    <!-- Baidu Map & Building Side-by-Side -->
+    <div class="map-building-wrap">
+      <div class="map-container">
+        <!--Baidu Map
+        <div style="width:100%;height:100%;border:#ccc solid 1px;font-size:12px" id="map"></div>
+        -->
+        <div style="width:100%;height:100%" id="amap-container"></div>
+      </div>
+      <div class="company-building-img">
+        <img src="./img/company-building.jpg" alt="会社外観">
+      </div>
+    </div>
+  </div>
+
+  <div class="address-block">
+    <div class="address-item">
+      <span class="address-label">Address</span>
+      <span class="address-value">
+        大連市金馬路君悦豪庭152<br>
+        10-12室 大連経済技術開発区
+      </span>
+    </div>
+    <div class="address-item">
+      <span class="address-label">Tel / Fax</span>
+      <span class="address-value">
+        TEL　0411-87539484<br>
+        FAX　0411-87539217
+      </span>
+    </div>
+    <div class="address-item">
+      <span class="address-label">Website</span>
+      <span class="address-value">
+        <a href="http://www.yamamaotong.com" target="_blank" style="color:var(--gold); text-decoration:none;">
+          www.yamamaotong.com
+        </a>
+      </span>
+    </div>
+    <div class="address-item">
+      <span class="address-qr-code">QR Code</span>
+      <span class="address-qr-code-img-container">
+        <img class="address-qr-code-img" src="./img/qr-code.jpg" alt="QR Code">
+      </span>
+    </div>
+  </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">YAMAMOTO (DALIAN) TRADING CO., LTD</div>
+    <a href="http://www.yamamaotong.com" class="footer-link" target="_blank">www.yamamaotong.com</a>
+    <div class="footer-copy">© YAMAMOTO DALIAN TRADING. ALL RIGHTS RESERVED.</div>
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+    <div class="lightbox-inner">
+      <button class="lb-close" onclick="closeLightbox()">✕</button>
+      <img id="lbImg" src="" alt="" style="display:none;">
+      <video id="lbVideo" src="" controls style="display:none;"></video>
+      <div id="lbCaption"
+        style="color:rgba(255,255,255,0.5); font-size:11px; letter-spacing:0.2em; margin-top:16px; text-align:center;">
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ── MOBILE MENU ──
+    function toggleMenu() {
+      const btn = document.getElementById('hamburger');
+      const nav = document.getElementById('mobileNav');
+      btn.classList.toggle('open');
+      nav.classList.toggle('open');
+    }
+
+    function closeMenu() {
+      document.getElementById('hamburger').classList.remove('open');
+      document.getElementById('mobileNav').classList.remove('open');
+    }
+
+    // ── SLIDESHOW ──
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.dot');
+    let slideshowTimer;
+
+    function goSlide(n, isHover = false) {
+      slides[currentSlide].classList.remove('active');
+      dots[currentSlide].classList.remove('active');
+      currentSlide = n;
+      slides[currentSlide].classList.add('active');
+      dots[currentSlide].classList.add('active');
+      if (isHover) {
+        clearInterval(slideshowTimer);
+      } else {
+        resetTimer();
+      }
+    }
+
+    function nextSlide() {
+      goSlide((currentSlide + 1) % slides.length);
+    }
+
+    function resetTimer() {
+      clearInterval(slideshowTimer);
+      slideshowTimer = setInterval(nextSlide, 5000);
+    }
+
+    slideshowTimer = setInterval(nextSlide, 5000);
+
+    // ── TOUCH SWIPE for slideshow ──
+    (function () {
+      const wrapper = document.querySelector('.slideshow-wrapper');
+      let startX = 0;
+      wrapper.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+      wrapper.addEventListener('touchend', e => {
+        const dx = e.changedTouches[0].clientX - startX;
+        if (Math.abs(dx) > 40) {
+          dx < 0 ? goSlide((currentSlide + 1) % slides.length)
+            : goSlide((currentSlide - 1 + slides.length) % slides.length);
+        }
+      }, { passive: true });
+    })();
+
+    // ── LIGHTBOX ──
+    function openLightbox(el) {
+      const img = el.querySelector('img');
+      const video = el.querySelector('video');
+      const placeholder = el.querySelector('.gallery-placeholder');
+      const lb = document.getElementById('lightbox');
+      const lbImg = document.getElementById('lbImg');
+      const lbVideo = document.getElementById('lbVideo');
+      const lbCap = document.getElementById('lbCaption');
+
+      // Reset
+      lbImg.style.display = 'none';
+      lbVideo.style.display = 'none';
+      lbVideo.pause();
+      lbVideo.src = '';
+
+      if (img) {
+        lbImg.src = img.src;
+        lbImg.style.display = 'block';
+        lbCap.textContent = img.alt || placeholder?.textContent || '';
+      } else if (video) {
+        lbVideo.src = video.src;
+        lbVideo.style.display = 'block';
+        lbVideo.play();
+        lbCap.textContent = video.getAttribute('alt') || placeholder?.textContent || '';
+      } else if (placeholder) {
+        lbImg.src = '';
+        lbImg.style.display = 'none';
+        lbCap.textContent = placeholder.textContent;
+      }
+      lb.classList.add('open');
+    }
+
+    function closeLightbox(e) {
+      if (!e || e.target === document.getElementById('lightbox') || e.target.classList.contains('lb-close')) {
+        const lb = document.getElementById('lightbox');
+        const lbVideo = document.getElementById('lbVideo');
+        lb.classList.remove('open');
+        lbVideo.pause();
+        lbVideo.src = '';
+      }
+    }
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+
+    // ── SCROLL REVEAL ──
+    const revealEls = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.15 });
+    revealEls.forEach(el => observer.observe(el));
+
+    /*  //创建和初始化地图函数：
+     function initMap() {
+         createMap();//创建地图
+       setMapEvent();//设置地图事件
+       addMapControl();//向地图添加控件
+       addMapOverlay();//向地图添加覆盖物
+     }
+       function createMap() {
+         map = new BMap.Map("map");
+       map.centerAndZoom(new BMap.Point(121.775314, 39.053792), 17);
+       // Reset map after creation to ensure it renders correctly with current container dimensions
+       setTimeout(function () {
+         map.reset();
+       }, 50);
+     }
+       function setMapEvent() {
+         map.enableScrollWheelZoom();
+       map.enableKeyboard();
+       map.enableDragging();
+       map.enableDoubleClickZoom()
+     }
+       function (target, window) {
+         target.addEventListener("click", function () {
+           target.openInfoWindow(window);
+         });
+     }
+       function addMapOverlay() {
+       var markers = [
+       {content: "大連市金馬路君悦豪庭152 1012室", title: "雅玛茂通（大连）贸易有限公司", imageOffset: {width: 0, height: 3 }, position: {lat: 39.053946, lng: 121.77526 } }
+       ];
+       for (var index = 0; index < markers.length; index++) {
+         var point = new BMap.Point(markers[index].position.lng, markers[index].position.lat);
+       var marker = new BMap.Marker(point, {
+         icon: new BMap.Icon("https://api.map.baidu.com/lbsapi/createmap/images/icon.png", new BMap.Size(20, 25), {
+         imageOffset: new BMap.Size(markers[index].imageOffset.width, markers[index].imageOffset.height)
+           })
+         });
+       var label = new BMap.Label(markers[index].title, {offset: new BMap.Size(25, 5) });
+       var opts = {
+         width: 100,
+       title: markers[index].title,
+       enableMessage: true
+         };
+       var infoWindow = new BMap.InfoWindow(markers[index].content, opts);
+       marker.setLabel(label);
+       addClickHandler(marker, infoWindow);
+       map.addOverlay(marker);
+       marker.openInfoWindow(infoWindow);
+       };
+     }
+       //向地图添加控件
+       function addMapControl() {
+       var scaleControl = new BMap.ScaleControl({anchor: BMAP_ANCHOR_BOTTOM_LEFT });
+       scaleControl.setUnit(BMAP_UNIT_IMPERIAL);
+       map.addControl(scaleControl);
+       var navControl = new BMap.NavigationControl({anchor: BMAP_ANCHOR_TOP_LEFT, type: BMAP_NAVIGATION_CONTROL_LARGE });
+       map.addControl(navControl);
+       var overviewControl = new BMap.OverviewMapControl({anchor: BMAP_ANCHOR_BOTTOM_RIGHT, isOpen: true });
+       map.addControl(overviewControl);
+     }
+       var map;
+       // Ensure map initializes after DOM is ready
+       if (document.readyState === 'loading') {
+         document.addEventListener('DOMContentLoaded', function () {
+           // Delay initialization on mobile to ensure flexbox height is calculated
+           setTimeout(initMap, 500);
+         });
+     } else {
+         setTimeout(initMap, 500);
+     }
+       // Handle window resize
+       window.addEventListener('resize', function () { 
+    if (map) {
+      // Reset map to recalculate dimensions based on new container size
+      setTimeout(function () {
+        map.reset();
+      }, 50);
+    }
+    });*/
+  </script>
+</body>
+
+</html>
