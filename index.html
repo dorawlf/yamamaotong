@@ -212,31 +212,33 @@
       height: 100vh;
       min-height: 640px;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
       padding-left: 80px;
       position: relative;
       overflow: hidden;
     }
 
-    .hero-bg {
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(135deg, rgba(184, 150, 110, 0.06) 0%, transparent 60%),
-        radial-gradient(ellipse at 80% 50%, rgba(184, 150, 110, 0.08) 0%, transparent 60%);
+    .hero-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      z-index: 2;
+      position: relative;
     }
 
     /* Decorative vertical rule */
     .hero::before {
       content: '';
       position: absolute;
-      left: 48px;
+      left: 80px;
       top: 20%;
       bottom: 20%;
       width: 1px;
       background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+      z-index: 3;
     }
 
     .hero-label {
@@ -246,27 +248,29 @@
       color: var(--gold);
       margin-bottom: 28px;
       font-weight: 400;
+      animation: fadeUp 1s ease both;
     }
 
     .hero-video-wrap {
-      position: absolute;
-      inset: 0;
-      z-index: -1;
-      overflow: hidden;
-      background: var(--paper);
+      position: relative;
+      width: 60%;
+      height: 100%;
+      margin-right: -80px;
+      z-index: 0;
+      padding: 0 0;
     }
 
     .hero-video-wrap video {
       width: 100%;
       height: 100%;
+      z-index: 1;
       object-fit: cover;
-      object-position: left center;
-      opacity: 0.25;
-      /* "虚化" - subtle blur for immersion */
-      filter: blur(1px) grayscale(20%);
-      /* Fading edges for the "immersive" feel */
-      mask-image: radial-gradient(circle at 20% 50%, black 0%, transparent 80%);
-      -webkit-mask-image: radial-gradient(circle at 20% 50%, black 0%, transparent 80%);
+      opacity: 1;
+      display: block;
+      /* Blur edges for immersive effect */
+      filter: blur(0px);
+      -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 100%);
+      mask-image: radial-gradient(ellipse at center, black 30%, transparent 100%);
     }
 
     .hero-title {
@@ -866,12 +870,29 @@
       }
 
       .hero {
+        flex-direction: column;
         padding-left: 48px;
         min-height: 560px;
       }
 
       .hero::before {
         left: 24px;
+      }
+
+      .hero-video-wrap {
+        position: absolute;
+        width: 100%;
+        margin-right: 0;
+        padding: 0;
+      }
+
+      .hero-video-wrap::before {
+        display: none;
+      }
+
+      .hero-content {
+        flex: none;
+        position: relative;
       }
 
       section {
@@ -943,6 +964,7 @@
       }
 
       .hero {
+        flex-direction: column;
         padding-left: 28px;
         padding-right: 20px;
         padding-top: 60px;
@@ -952,6 +974,22 @@
 
       .hero::before {
         left: 16px;
+      }
+
+      .hero-video-wrap {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        margin-right: 0;
+        padding: 0;
+      }
+
+      .hero-video-wrap::before {
+        display: none;
+      }
+
+      .hero-content {
+        position: relative;
       }
 
       .hero-label {
@@ -1067,8 +1105,6 @@
       }
     }
   </style>
-  <script type="text/javascript"
-    src="https://api.map.baidu.com/api?v=2.0&ak=l8R7QaoiooQ6Le6bGuoB8MpCGz9fagrp&s=1"></script>
   <script type="text/javascript">
     window._AMapSecurityConfig = {
       securityJsCode: "7253490fd0c8186ef4750e590d9ccf26",
@@ -1126,7 +1162,6 @@
 </head>
 
 <body>
-
   <!-- HEADER -->
   <header>
     <div class="logo-wrap">
@@ -1160,18 +1195,16 @@
 
   <!-- HERO -->
   <section class="hero" id="about">
-    <div class="hero-video-wrap">
-      <video src="img/hero-vedio-480.webm" autoplay loop muted playsinline></video>
+    <div class="hero-content">
+      <div class="hero-label">Dalian Economic and technological Development Zone</div>
+      <h1 class="hero-title">雅玛茂通（大连）贸易有限公司</h1>
+      <p class="hero-subtitle">YAMAMOTO(DALIAN)TRADING CO.,LTD</p>
+      <div class="hero-info">
+        <div style="margin-top:8px"><a href="http://www.yamamaotong.com" target="_blank">www.yamamaotong.com</a></div>
+      </div>
     </div>
-    <div class="hero-bg"></div>
-    <div class="hero-label">Dalian Development Zone</div>
-    <h1 class="hero-title">雅玛茂通（大连）贸易有限公司</h1>
-    <p class="hero-subtitle">YAMAMOTO(DALIAN)TRADING CO.,LTD</p>
-    <div class="hero-info">
-      <div>大連市金馬路君悦豪庭 152号 1012室</div>
-      <div>ROOM 10-12, JUNYUE HAO TING 152, JINMA ROAD</div>
-      <div>TEL: (+86) 0411-87539484　FAX: (+86) 0411-87539217</div>
-      <div style="margin-top:8px"><a href="http://www.yamamaotong.com" target="_blank">www.yamamaotong.com</a></div>
+    <div class="hero-video-wrap">
+      <video src="img/dalian-hero-video.webm" autoplay loop muted playsinline></video>
     </div>
     <div class="hero-scroll">Scroll</div>
   </section>
@@ -1202,10 +1235,11 @@
               <div>
                 <div
                   style="font-family:'Noto Serif JP',serif; font-size:15px; color:#fff; font-weight:300; line-height:1.8; letter-spacing:0.08em;">
-                  日本製・中国製の工作機械及び周辺機器の販売</div>
+                  日本向け・中国国内向けの部品加工請負<br><span
+                    style="font-size:13px; color:rgba(255,255,255,0.6);">（中国国内の協力工場にて対応）</span></div>
                 <div
                   style="font-size:10px; color:rgba(255,255,255,0.38); letter-spacing:0.18em; margin-top:4px; text-transform:uppercase;">
-                  Sales of Japanese &amp; Chinese Machine Tools</div>
+                  Parts Processing for Japan &amp; China via Partner Factories</div>
               </div>
             </li>
             <li style="display:flex; gap:20px; align-items:flex-start;">
@@ -1226,11 +1260,10 @@
               <div>
                 <div
                   style="font-family:'Noto Serif JP',serif; font-size:15px; color:#fff; font-weight:300; line-height:1.8; letter-spacing:0.08em;">
-                  日本向け・中国国内向けの部品加工請負<br><span
-                    style="font-size:13px; color:rgba(255,255,255,0.6);">（中国国内の協力工場にて対応）</span></div>
+                  日本製・中国製の工作機械及び周辺機器の販売</div>
                 <div
                   style="font-size:10px; color:rgba(255,255,255,0.38); letter-spacing:0.18em; margin-top:4px; text-transform:uppercase;">
-                  Parts Processing for Japan &amp; China via Partner Factories</div>
+                  Sales of Japanese &amp; Chinese Machine Tools</div>
               </div>
             </li>
           </ol>
@@ -1290,10 +1323,10 @@
         </div>
       </div>
 
-      <div class="slide-dots" onmouseleave="resetTimer()">
-        <div class="dot active" onclick="goSlide(0)" onmouseenter="goSlide(0, true)"></div>
-        <div class="dot" onclick="goSlide(1)" onmouseenter="goSlide(1, true)"></div>
-        <div class="dot" onclick="goSlide(2)" onmouseenter="goSlide(2, true)"></div>
+      <div class="slide-dots">
+        <div class="dot active" onclick="goSlide(0)" onmouseenter="goSlide(0)"></div>
+        <div class="dot" onclick="goSlide(1)" onmouseenter="goSlide(1)"></div>
+        <div class="dot" onclick="goSlide(2)" onmouseenter="goSlide(2)"></div>
       </div>
     </div>
   </div>
@@ -1410,15 +1443,32 @@
       </div>
     </div>
     <br>
-    <div class="section-num">04 部品加工例</div>
-    <!-- Row 4: Video Example with optimization -->
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 3px; margin-bottom: 12px;">
+      <div class="section-num">両端加工CNC旋盤</div>
+      <div class="section-num">AUTO LOADER</div>
+      <div class="section-num">専用機</div>
+      <div class="section-num">部品加工</div>
+    </div>
     <div class="gallery-grid row4"
-      style="margin-top: 3px; display: grid; grid-template-columns: repeat(5, 1fr); gap: 3px;">
+      style="margin-top: 3px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 3px;">
       <div class="gallery-item video-item" onclick="openLightbox(this)">
-        <!-- preload="none" saves 9MB+ on initial load -->
         <video src="./img/gallery/DNL082-Center-drive-turning-machine.mp4" preload="none" playsinline
-          alt="部品加工例"></video>
-        <div class="gallery-placeholder" style="display:none;">部品加工例</div>
+          alt="両端加工CNC旋盤"></video>
+        <div class="gallery-placeholder">両端加工CNC旋盤</div>
+      </div>
+      <div class="gallery-item video-item" onclick="openLightbox(this)">
+        <video src="./img/gallery/DNL082-Center-drive-turning-machine.mp4" preload="none" playsinline
+          alt="AUTO LOADER"></video>
+        <div class="gallery-placeholder">AUTO LOADER</div>
+      </div>
+      <div class="gallery-item video-item" onclick="openLightbox(this)">
+        <video src="./img/gallery/DNL082-Center-drive-turning-machine.mp4" preload="none" playsinline alt="専用機"></video>
+        <div class="gallery-placeholder">専用機</div>
+      </div>
+      <div class="gallery-item video-item" onclick="openLightbox(this)">
+        <video src="./img/gallery/DNL082-Center-drive-turning-machine.mp4" preload="none" playsinline
+          alt="部品加工"></video>
+        <div class="gallery-placeholder">部品加工</div>
       </div>
     </div>
   </section>
@@ -1433,12 +1483,8 @@
         </div>
       </div>
     </div>
-    <!-- Baidu Map & Building Side-by-Side -->
     <div class="map-building-wrap">
       <div class="map-container">
-        <!--Baidu Map
-        <div style="width:100%;height:100%;border:#ccc solid 1px;font-size:12px" id="map"></div>
-        -->
         <div style="width:100%;height:100%" id="amap-container"></div>
       </div>
       <div class="company-building-img">
@@ -1452,14 +1498,16 @@
       <span class="address-label">Address</span>
       <span class="address-value">
         大連市金馬路君悦豪庭152<br>
-        10-12室 大連経済技術開発区
+        10-12室 大連経済技術開発区<br>
+        ROOM 10-12, JUNYUE HAO TING 152, JINMA ROAD<br>
+        DALIAN ECONOMIC &amp; TECHNICAL DEVELOPMENT ZONE
       </span>
     </div>
     <div class="address-item">
       <span class="address-label">Tel / Fax</span>
       <span class="address-value">
-        TEL　0411-87539484<br>
-        FAX　0411-87539217
+        TEL　(+86) 0411-87539484<br>
+        FAX　(+86) 0411-87539217
       </span>
     </div>
     <div class="address-item">
@@ -1534,44 +1582,30 @@
     let currentSlide = 0;
     const slides = document.querySelectorAll('.slide');
     const dots = document.querySelectorAll('.dot');
-    let slideshowTimer;
 
-    function goSlide(n, isHover = false) {
+    function goSlide(n) {
+      if (n === currentSlide) return;
       slides[currentSlide].classList.remove('active');
       dots[currentSlide].classList.remove('active');
       currentSlide = n;
       slides[currentSlide].classList.add('active');
       dots[currentSlide].classList.add('active');
-      if (isHover) {
-        clearInterval(slideshowTimer);
-      } else {
-        resetTimer();
-      }
     }
 
-    function nextSlide() {
-      goSlide((currentSlide + 1) % slides.length);
-    }
-
-    function resetTimer() {
-      clearInterval(slideshowTimer);
-      slideshowTimer = setInterval(nextSlide, 5000);
-    }
-
-    slideshowTimer = setInterval(nextSlide, 5000);
-
-    // ── TOUCH SWIPE for slideshow ──
+    // Touch swipe for slideshow
     (function () {
       const wrapper = document.querySelector('.slideshow-wrapper');
-      let startX = 0;
-      wrapper.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
-      wrapper.addEventListener('touchend', e => {
-        const dx = e.changedTouches[0].clientX - startX;
-        if (Math.abs(dx) > 40) {
-          dx < 0 ? goSlide((currentSlide + 1) % slides.length)
-            : goSlide((currentSlide - 1 + slides.length) % slides.length);
-        }
-      }, { passive: true });
+      if (wrapper) {
+        let startX = 0;
+        wrapper.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+        wrapper.addEventListener('touchend', e => {
+          const dx = e.changedTouches[0].clientX - startX;
+          if (Math.abs(dx) > 40) {
+            dx < 0 ? goSlide((currentSlide + 1) % slides.length)
+              : goSlide((currentSlide - 1 + slides.length) % slides.length);
+          }
+        }, { passive: true });
+      }
     })();
 
     // ── LIGHTBOX ──
@@ -1627,86 +1661,84 @@
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
     }, { threshold: 0.15 });
     revealEls.forEach(el => observer.observe(el));
-
-    /*  //创建和初始化地图函数：
-     function initMap() {
-         createMap();//创建地图
-       setMapEvent();//设置地图事件
-       addMapControl();//向地图添加控件
-       addMapOverlay();//向地图添加覆盖物
-     }
-       function createMap() {
-         map = new BMap.Map("map");
-       map.centerAndZoom(new BMap.Point(121.775314, 39.053792), 17);
-       // Reset map after creation to ensure it renders correctly with current container dimensions
-       setTimeout(function () {
-         map.reset();
-       }, 50);
-     }
-       function setMapEvent() {
-         map.enableScrollWheelZoom();
-       map.enableKeyboard();
-       map.enableDragging();
-       map.enableDoubleClickZoom()
-     }
-       function (target, window) {
-         target.addEventListener("click", function () {
-           target.openInfoWindow(window);
-         });
-     }
-       function addMapOverlay() {
-       var markers = [
-       {content: "大連市金馬路君悦豪庭152 1012室", title: "雅玛茂通（大连）贸易有限公司", imageOffset: {width: 0, height: 3 }, position: {lat: 39.053946, lng: 121.77526 } }
-       ];
-       for (var index = 0; index < markers.length; index++) {
-         var point = new BMap.Point(markers[index].position.lng, markers[index].position.lat);
-       var marker = new BMap.Marker(point, {
-         icon: new BMap.Icon("https://api.map.baidu.com/lbsapi/createmap/images/icon.png", new BMap.Size(20, 25), {
-         imageOffset: new BMap.Size(markers[index].imageOffset.width, markers[index].imageOffset.height)
-           })
-         });
-       var label = new BMap.Label(markers[index].title, {offset: new BMap.Size(25, 5) });
-       var opts = {
-         width: 100,
-       title: markers[index].title,
-       enableMessage: true
-         };
-       var infoWindow = new BMap.InfoWindow(markers[index].content, opts);
-       marker.setLabel(label);
-       addClickHandler(marker, infoWindow);
-       map.addOverlay(marker);
-       marker.openInfoWindow(infoWindow);
-       };
-     }
-       //向地图添加控件
-       function addMapControl() {
-       var scaleControl = new BMap.ScaleControl({anchor: BMAP_ANCHOR_BOTTOM_LEFT });
-       scaleControl.setUnit(BMAP_UNIT_IMPERIAL);
-       map.addControl(scaleControl);
-       var navControl = new BMap.NavigationControl({anchor: BMAP_ANCHOR_TOP_LEFT, type: BMAP_NAVIGATION_CONTROL_LARGE });
-       map.addControl(navControl);
-       var overviewControl = new BMap.OverviewMapControl({anchor: BMAP_ANCHOR_BOTTOM_RIGHT, isOpen: true });
-       map.addControl(overviewControl);
-     }
-       var map;
-       // Ensure map initializes after DOM is ready
-       if (document.readyState === 'loading') {
-         document.addEventListener('DOMContentLoaded', function () {
-           // Delay initialization on mobile to ensure flexbox height is calculated
-           setTimeout(initMap, 500);
-         });
-     } else {
-         setTimeout(initMap, 500);
-     }
-       // Handle window resize
-       window.addEventListener('resize', function () { 
-    if (map) {
-      // Reset map to recalculate dimensions based on new container size
+    function initMap() {
+      createMap();//创建地图
+      setMapEvent();//设置地图事件
+      addMapControl();//向地图添加控件
+      addMapOverlay();//向地图添加覆盖物
+    }
+    function createMap() {
+      map = new BMap.Map("map");
+      map.centerAndZoom(new BMap.Point(121.775314, 39.053792), 17);
+      // Reset map after creation to ensure it renders correctly with current container dimensions
       setTimeout(function () {
         map.reset();
       }, 50);
     }
-    });*/
+    function setMapEvent() {
+      map.enableScrollWheelZoom();
+      map.enableKeyboard();
+      map.enableDragging();
+      map.enableDoubleClickZoom()
+    }
+    function addClickHandler(target, window) {
+      target.addEventListener("click", function () {
+        target.openInfoWindow(window);
+      });
+    }
+    function addMapOverlay() {
+      var markers = [
+        { content: "大連市金馬路君悦豪庭152 1012室", title: "雅玛茂通（大连）贸易有限公司", imageOffset: { width: 0, height: 3 }, position: { lat: 39.053946, lng: 121.77526 } }
+      ];
+      for (var index = 0; index < markers.length; index++) {
+        var point = new BMap.Point(markers[index].position.lng, markers[index].position.lat);
+        var marker = new BMap.Marker(point, {
+          icon: new BMap.Icon("https://api.map.baidu.com/lbsapi/createmap/images/icon.png", new BMap.Size(20, 25), {
+            imageOffset: new BMap.Size(markers[index].imageOffset.width, markers[index].imageOffset.height)
+          })
+        });
+        var label = new BMap.Label(markers[index].title, { offset: new BMap.Size(25, 5) });
+        var opts = {
+          width: 100,
+          title: markers[index].title,
+          enableMessage: true
+        };
+        var infoWindow = new BMap.InfoWindow(markers[index].content, opts);
+        marker.setLabel(label);
+        addClickHandler(marker, infoWindow);
+        map.addOverlay(marker);
+        marker.openInfoWindow(infoWindow);
+      };
+    }
+    //向地图添加控件
+    function addMapControl() {
+      var scaleControl = new BMap.ScaleControl({ anchor: BMAP_ANCHOR_BOTTOM_LEFT });
+      scaleControl.setUnit(BMAP_UNIT_IMPERIAL);
+      map.addControl(scaleControl);
+      var navControl = new BMap.NavigationControl({ anchor: BMAP_ANCHOR_TOP_LEFT, type: BMAP_NAVIGATION_CONTROL_LARGE });
+      map.addControl(navControl);
+      var overviewControl = new BMap.OverviewMapControl({ anchor: BMAP_ANCHOR_BOTTOM_RIGHT, isOpen: true });
+      map.addControl(overviewControl);
+    }
+    var map;
+    // Ensure map initializes after DOM is ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', function () {
+        // Delay initialization on mobile to ensure flexbox height is calculated
+        setTimeout(initMap, 500);
+      });
+    } else {
+      setTimeout(initMap, 500);
+    }
+    // Handle window resize
+    window.addEventListener('resize', function () {
+      if (map) {
+        // Reset map to recalculate dimensions based on new container size
+        setTimeout(function () {
+          map.reset();
+        }, 50);
+      }
+    });
   </script>
 </body>
 
