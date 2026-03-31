@@ -523,6 +523,16 @@
       transform: scale(1.08);
     }
 
+    /* Hide video in gallery, show only preview image */
+    .gallery-item video {
+      display: none;
+    }
+
+    .gallery-item.video-item video {
+      display: none;
+      /* Videos are shown in lightbox only */
+    }
+
     .gallery-item::after {
       content: '＋';
       position: absolute;
@@ -1205,7 +1215,7 @@
       </div>
     </div>
     <div class="hero-video-wrap">
-      <video src="img/dalian-hero-video.webm" autoplay loop muted playsinline></video>
+      <video src="img/hero-video-dalian.mp4" autoplay loop muted playsinline></video>
     </div>
     <div class="hero-scroll">Scroll</div>
   </section>
@@ -1374,23 +1384,23 @@
     <div class="gallery-grid row2">
       <!-- Row 2: Expert Machines -->
       <div class="gallery-item" onclick="openLightbox(this)">
-        <img src="./img/gallery/expert-machine-1.jpg" alt="工作機械">
+        <img src="./img/gallery/expert-machine-1.jpg" alt="専用機械・省力化設備">
         <div class="gallery-placeholder">専用機械・省力化設備</div>
       </div>
       <div class="gallery-item" onclick="openLightbox(this)">
-        <img src="./img/gallery/expert-machine-2.jpg" alt="工作機械">
+        <img src="./img/gallery/expert-machine-2.jpg" alt="専用機械・省力化設備">
         <div class="gallery-placeholder">専用機械・省力化設備</div>
       </div>
       <div class="gallery-item" onclick="openLightbox(this)">
-        <img src="./img/gallery/expert-machine-3.jpg" alt="工作機械">
+        <img src="./img/gallery/expert-machine-3.jpg" alt="専用機械・省力化設備">
         <div class="gallery-placeholder">専用機械・省力化設備</div>
       </div>
       <div class="gallery-item" onclick="openLightbox(this)">
-        <img src="./img/gallery/expert-machine-4.jpg" alt="工作機械">
+        <img src="./img/gallery/expert-machine-4.jpg" alt="専用機械・省力化設備">
         <div class="gallery-placeholder">専用機械・省力化設備</div>
       </div>
       <div class="gallery-item" onclick="openLightbox(this)">
-        <img src="./img/gallery/expert-machine-5.jpg" alt="工作機械">
+        <img src="./img/gallery/expert-machine-5.jpg" alt="専用機械・省力化設備">
         <div class="gallery-placeholder">専用機械・省力化設備</div>
       </div>
     </div>
@@ -1445,29 +1455,34 @@
     </div>
     <br>
     <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 3px; margin-bottom: 12px;">
-      <div class="section-num">両端加工CNC旋盤</div>
-      <div class="section-num">AUTO LOADER</div>
-      <div class="section-num">専用機</div>
-      <div class="section-num">部品加工</div>
+      <div class="section-num">▷ 両端加工CNC旋盤</div>
+      <div class="section-num">▷ AUTO LOADER</div>
+      <div class="section-num">▷ 専用機</div>
+      <div class="section-num">▷ 部品加工</div>
     </div>
     <div class="gallery-grid row4"
       style="margin-top: 3px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 3px;">
       <div class="gallery-item video-item" onclick="openLightbox(this)">
-        <video src="./img/gallery/DNL082-Center-drive-turning-machine.mp4" preload="none" playsinline
+        <img src="./img/gallery/cnc-preview.jpg" alt="Video Preview" class="preview-img">
+        <video src="./img/gallery/cnc.mp4" preload="none" playsinline
           alt="両端加工CNC旋盤"></video>
         <div class="gallery-placeholder">両端加工CNC旋盤</div>
       </div>
       <div class="gallery-item video-item" onclick="openLightbox(this)">
-        <video src="./img/gallery/DNL082-Center-drive-turning-machine.mp4" preload="none" playsinline
+        <img src="./img/gallery/auto-loader-preview.jpg" alt="Video Preview" class="preview-img">
+        <video src="./img/gallery/auto-loader.mp4" preload="none" playsinline
           alt="AUTO LOADER"></video>
         <div class="gallery-placeholder">AUTO LOADER</div>
       </div>
       <div class="gallery-item video-item" onclick="openLightbox(this)">
-        <video src="./img/gallery/DNL082-Center-drive-turning-machine.mp4" preload="none" playsinline alt="専用機"></video>
+        <img src="./img/gallery/expert-machine-preview.jpg" alt="Video Preview" class="preview-img">
+        <video src="./img/gallery/expert-machine.mp4" preload="none" playsinline 
+          alt="専用機"></video>
         <div class="gallery-placeholder">専用機</div>
       </div>
       <div class="gallery-item video-item" onclick="openLightbox(this)">
-        <video src="./img/gallery/DNL082-Center-drive-turning-machine.mp4" preload="none" playsinline
+        <img src="./img/gallery/parts-tailoring-preview.jpg" alt="Video Preview" class="preview-img">
+        <video src="./img/gallery/parts-tailoring.mp4" preload="none" playsinline
           alt="部品加工"></video>
         <div class="gallery-placeholder">部品加工</div>
       </div>
@@ -1625,7 +1640,13 @@
       lbVideo.pause();
       lbVideo.src = '';
 
-      if (img) {
+      // Check if this is a video item (prioritize video for video-items)
+      if (el.classList.contains('video-item') && video) {
+        lbVideo.src = video.src;
+        lbVideo.style.display = 'block';
+        lbVideo.play();
+        lbCap.textContent = video.getAttribute('alt') || placeholder?.textContent || '';
+      } else if (img) {
         lbImg.src = img.src;
         lbImg.style.display = 'block';
         lbCap.textContent = img.alt || placeholder?.textContent || '';
