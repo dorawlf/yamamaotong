@@ -403,7 +403,7 @@
     .slideshow-wrapper {
       position: relative;
       overflow: hidden;
-      height: 520px;
+      height: 700px;
     }
 
     .slide {
@@ -436,7 +436,7 @@
       z-index: 2;
       display: flex;
       flex-direction: column;
-      justify-content: flex-end;
+      justify-content: center;
       padding: 60px 80px;
       width: 100%;
     }
@@ -925,7 +925,7 @@
       }
 
       .slideshow-wrapper {
-        height: 400px;
+        height: 700px;
       }
 
       .slide-content {
@@ -1060,7 +1060,7 @@
       }
 
       .slideshow-wrapper {
-        height: 550px;
+        height: 700px;
       }
 
       .slide-content {
@@ -1116,13 +1116,12 @@
       }
     }
   </style>
+  <script src="https://webapi.amap.com/loader.js"></script>
   <script type="text/javascript">
     window._AMapSecurityConfig = {
       securityJsCode: "7253490fd0c8186ef4750e590d9ccf26",
     };
-  </script>
-  <script src="https://webapi.amap.com/loader.js"></script>
-  <script type="text/javascript">
+
     let amapInstance = null;
 
     function initAMap() {
@@ -1225,31 +1224,31 @@
     <div class="slideshow-wrapper">
       <div class="slide active">
         <div class="slide-bg"
-          style="background-color:#1e2a1e; background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22><rect fill=%22%231e2a1e%22 width=%22400%22 height=%22300%22/><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23446644%22 font-size=%2218%22 font-family=%22sans-serif%22>会社紹介</text></svg>');">
+          style="background-color:#1e2a1e;">
         </div>
         <div class="slide-content">
-          <div class="slide-tag"></div>
+          <div class="slide-tag" style="margin-bottom:32px; font-size:20px;">会社紹介 — Company Profile</div>
           <div class="slide-label">弊社は2010年に設立した100%日系独資の機械商社で、中国東北部の大連に所在します。</div>
         </div>
       </div>
 
       <div class="slide">
         <div class="slide-bg"
-          style="background-color:#1e2a1e; background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22><rect fill=%22%231e2a1e%22 width=%22400%22 height=%22300%22/><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23446644%22 font-size=%2218%22 font-family=%22sans-serif%22>事業内容</text></svg>');">
+          style="background-color:#1e2a1e;">
         </div>
         <div class="slide-content" style="justify-content:center; padding-bottom:80px;">
-          <div class="slide-tag" style="margin-bottom:32px; font-size:11px;">事業内容 — Business Overview</div>
+          <div class="slide-tag" style="margin-bottom:32px; font-size:20px;">事業内容 — Business Overview</div>
           <ol style="list-style:none; display:flex; flex-direction:column; gap:28px; max-width:680px;">
             <li style="display:flex; gap:20px; align-items:flex-start;">
               <span
                 style="font-family:'Cormorant Garamond',serif; font-size:28px; color:var(--gold); line-height:1; flex-shrink:0; margin-top:2px;">1</span>
               <div>
                 <div
-                  style="font-family:'Noto Serif JP',serif; font-size:15px; color:#fff; font-weight:300; line-height:1.8; letter-spacing:0.08em;">
+                  style="font-family:'Noto Serif JP',serif; font-size:18px; color:#fff; font-weight:300; line-height:1.8; letter-spacing:0.08em;">
                   日本向け・中国国内向けの部品加工請負<br><span
-                    style="font-size:13px; color:rgba(255,255,255,0.6);">（中国国内の協力工場にて対応）</span></div>
+                    style="font-size:15px; color:rgba(255,255,255,0.6);">（中国国内の協力工場にて対応）</span></div>
                 <div
-                  style="font-size:10px; color:rgba(255,255,255,0.38); letter-spacing:0.18em; margin-top:4px; text-transform:uppercase;">
+                  style="font-size:12px; color:rgba(255,255,255,0.38); letter-spacing:0.18em; margin-top:4px; text-transform:uppercase;">
                   Parts Processing for Japan &amp; China via Partner Factories</div>
               </div>
             </li>
@@ -1258,10 +1257,10 @@
                 style="font-family:'Cormorant Garamond',serif; font-size:28px; color:var(--gold); line-height:1; flex-shrink:0; margin-top:2px;">2</span>
               <div>
                 <div
-                  style="font-family:'Noto Serif JP',serif; font-size:15px; color:#fff; font-weight:300; line-height:1.8; letter-spacing:0.08em;">
+                  style="font-family:'Noto Serif JP',serif; font-size:18px; color:#fff; font-weight:300; line-height:1.8; letter-spacing:0.08em;">
                   搬送機・検査機・洗浄機等の専用設計機の販売</div>
                 <div
-                  style="font-size:10px; color:rgba(255,255,255,0.38); letter-spacing:0.18em; margin-top:4px; text-transform:uppercase;">
+                  style="font-size:12px; color:rgba(255,255,255,0.38); letter-spacing:0.18em; margin-top:4px; text-transform:uppercase;">
                   Custom Conveyors, Inspection &amp; Cleaning Systems</div>
               </div>
             </li>
@@ -1270,10 +1269,10 @@
                 style="font-family:'Cormorant Garamond',serif; font-size:28px; color:var(--gold); line-height:1; flex-shrink:0; margin-top:2px;">3</span>
               <div>
                 <div
-                  style="font-family:'Noto Serif JP',serif; font-size:15px; color:#fff; font-weight:300; line-height:1.8; letter-spacing:0.08em;">
+                  style="font-family:'Noto Serif JP',serif; font-size:18px; color:#fff; font-weight:300; line-height:1.8; letter-spacing:0.08em;">
                   日本製・中国製の工作機械及び周辺機器の販売</div>
                 <div
-                  style="font-size:10px; color:rgba(255,255,255,0.38); letter-spacing:0.18em; margin-top:4px; text-transform:uppercase;">
+                  style="font-size:12px; color:rgba(255,255,255,0.38); letter-spacing:0.18em; margin-top:4px; text-transform:uppercase;">
                   Sales of Japanese &amp; Chinese Machine Tools</div>
               </div>
             </li>
@@ -1285,17 +1284,17 @@
         <div class="slide-bg" style="background-color:#141a14;"></div>
         <div class="slide-content"
           style="justify-content:center; padding-top:40px; padding-bottom:60px; overflow-y:auto;">
-          <div class="slide-tag" style="margin-bottom:20px; font-size:11px; letter-spacing:0.28em;">各種加工品の製作を承ります</div>
+          <div class="slide-tag" style="margin-bottom:20px; font-size:15px; letter-spacing:0.28em;">各種加工品の製作を承ります</div>
           <div style="max-width:720px; display:flex; flex-direction:column; gap:18px;">
 
             <!-- Concern box -->
             <div
               style="border-left:2px solid var(--gold); padding:16px 20px; background:rgba(184,150,110,0.07); border-radius:0 4px 4px 0;">
               <div
-                style="font-size:9px; letter-spacing:0.3em; text-transform:uppercase; color:var(--gold-light); margin-bottom:10px;">
+                style="font-size:11px; letter-spacing:0.3em; text-transform:uppercase; color:var(--gold-light); margin-bottom:10px;">
                 よくあるご不安 — Common Concerns</div>
               <div
-                style="font-family:'Noto Serif JP',serif; font-size:13px; color:rgba(255,255,255,0.75); line-height:2; letter-spacing:0.07em;">
+                style="font-family:'Noto Serif JP',serif; font-size:16px; color:rgba(255,255,255,0.75); line-height:2; letter-spacing:0.07em;">
                 中国での部品製作を検討したいが、品質・納期・支払い等でトラブルにならないか心配…<br>
                 言葉の問題で、正しく意思疎通が取れるか心配…
               </div>
@@ -1303,7 +1302,7 @@
 
             <!-- Response -->
             <div
-              style="font-family:'Noto Serif JP',serif; font-size:13px; color:rgba(255,255,255,0.82); line-height:2.1; letter-spacing:0.07em;">
+              style="font-family:'Noto Serif JP',serif; font-size:16px; color:rgba(255,255,255,0.82); line-height:2.1; letter-spacing:0.07em;">
               そのようなお客様に、<span style="color:var(--gold-light);">誠意を持って対応</span>させて頂きます。<br>
               弊社提携先はすべて近隣に所在しており、加工状況・納期・品質を定期的に確認・ご報告いたします。詳細なお打合せが必要な場合はWeb等にて迅速に対応可能です。
             </div>
@@ -1311,23 +1310,23 @@
             <!-- Capabilities -->
             <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:2px;">
               <span
-                style="font-size:10px; letter-spacing:0.12em; color:rgba(255,255,255,0.55); border:1px solid rgba(255,255,255,0.15); padding:5px 12px; border-radius:2px;">単品・小ロット</span>
+                style="font-size:11px; letter-spacing:0.12em; color:var(--gold-light); border:1px solid rgba(255,255,255,0.15); padding:5px 12px; border-radius:2px;">単品・小ロット</span>
               <span
-                style="font-size:10px; letter-spacing:0.12em; color:rgba(255,255,255,0.55); border:1px solid rgba(255,255,255,0.15); padding:5px 12px; border-radius:2px;">治具・金型部品</span>
+                style="font-size:11px; letter-spacing:0.12em; color:var(--gold-light); border:1px solid rgba(255,255,255,0.15); padding:5px 12px; border-radius:2px;">治具・金型部品</span>
               <span
-                style="font-size:10px; letter-spacing:0.12em; color:rgba(255,255,255,0.55); border:1px solid rgba(255,255,255,0.15); padding:5px 12px; border-radius:2px;">熱処理・表面処理</span>
+                style="font-size:11px; letter-spacing:0.12em; color:var(--gold-light); border:1px solid rgba(255,255,255,0.15); padding:5px 12px; border-radius:2px;">熱処理・表面処理</span>
               <span
-                style="font-size:10px; letter-spacing:0.12em; color:rgba(255,255,255,0.55); border:1px solid rgba(255,255,255,0.15); padding:5px 12px; border-radius:2px;">マシニングセンタ加工</span>
+                style="font-size:11px; letter-spacing:0.12em; color:var(--gold-light); border:1px solid rgba(255,255,255,0.15); padding:5px 12px; border-radius:2px;">マシニングセンタ加工</span>
               <span
-                style="font-size:10px; letter-spacing:0.12em; color:rgba(255,255,255,0.55); border:1px solid rgba(255,255,255,0.15); padding:5px 12px; border-radius:2px;">平面研磨</span>
+                style="font-size:11px; letter-spacing:0.12em; color:var(--gold-light); border:1px solid rgba(255,255,255,0.15); padding:5px 12px; border-radius:2px;">平面研磨</span>
               <span
-                style="font-size:10px; letter-spacing:0.12em; color:rgba(255,255,255,0.55); border:1px solid rgba(255,255,255,0.15); padding:5px 12px; border-radius:2px;">放電・ワイヤーカット</span>
+                style="font-size:11px; letter-spacing:0.12em; color:var(--gold-light); border:1px solid rgba(255,255,255,0.15); padding:5px 12px; border-radius:2px;">放電・ワイヤーカット</span>
               <span
-                style="font-size:10px; letter-spacing:0.12em; color:rgba(255,255,255,0.55); border:1px solid rgba(255,255,255,0.15); padding:5px 12px; border-radius:2px;">精密部品加工</span>
+                style="font-size:11px; letter-spacing:0.12em; color:var(--gold-light); border:1px solid rgba(255,255,255,0.15); padding:5px 12px; border-radius:2px;">精密部品加工</span>
             </div>
 
             <div
-              style="font-family:'Noto Serif JP',serif; font-size:13px; color:var(--gold-light); letter-spacing:0.1em; margin-top:4px;">
+              style="font-family:'Noto Serif JP',serif; font-size:15px; color:rgba(255,255,255,0.82); letter-spacing:0.1em; margin-top:4px;">
               是非ともお問合せを賜りたくお願い致します。
             </div>
           </div>
@@ -1335,6 +1334,7 @@
       </div>
 
       <div class="slide-dots">
+        <div style="position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%); font-size: 11px; letter-spacing: 0.2em; color: var(--gold-light); text-transform: uppercase; white-space: nowrap;">More ↓</div>
         <div class="dot active" onclick="goSlide(0)" onmouseenter="goSlide(0)"></div>
         <div class="dot" onclick="goSlide(1)" onmouseenter="goSlide(1)"></div>
         <div class="dot" onclick="goSlide(2)" onmouseenter="goSlide(2)"></div>
