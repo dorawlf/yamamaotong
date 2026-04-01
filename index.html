@@ -1158,6 +1158,19 @@
             });
 
             infoWindow.open(amapInstance);
+
+            AMap.plugin('AMap.Scale', function() {
+                var scale = new AMap.Scale();
+                amapInstance.addControl(scale);
+            });
+
+            AMap.plugin(['AMap.ToolBar'], function() {
+                var toolbar = new AMap.ToolBar({
+                    visible: true,
+                    position: 'LT' // 控件位置：RB (右下), RT (右上), LB (左下), LT (左上)
+                });
+                amapInstance.addControl(toolbar);
+            });
           }
         })
         .catch((e) => {
