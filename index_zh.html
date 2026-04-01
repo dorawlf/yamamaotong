@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="zh-CN">
 
 <head>
   <meta charset="UTF-8">
@@ -11,8 +11,8 @@
         .then(function (r) { return r.json(); })
         .then(function (data) {
           var c = data.country;
-          if (c === 'CN' || c === 'TW' || c === 'HK' || c === 'MO') {
-            window.location.replace('index_zh.html');
+          if (c === 'JP') {
+            window.location.replace('index.html');
           }
         }).catch(function (e) { console.error(e); });
     })();
@@ -1196,16 +1196,16 @@
       </div>
     </div>
     <nav>
-      <a href="#about">About</a>
-      <a href="#products">Business</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#access">Access</a>
-      <a href="http://www.yamamaotong.com" target="_blank">Website</a>
+      <a href="#about">关于我们</a>
+      <a href="#products">业务内容</a>
+      <a href="#gallery">图集展示</a>
+      <a href="#access">访问地址</a>
+      <a href="http://www.yamamaotong.com" target="_blank">企业网站</a>
       <div style="font-size: 13px; font-family: 'Noto Sans JP', sans-serif; letter-spacing: 0.1em; margin-left:12px;">
-        <span style="color:var(--gold);">日文</span>
+        <a href="index.html"
+          style="letter-spacing:0; color:var(--ash); font-size: 13px; text-transform:none; border-bottom:1px solid transparent; padding-bottom:2px;">日文</a>
         <span style="margin:0 8px;color:var(--ash);">|</span>
-        <a href="index_zh.html"
-          style="letter-spacing:0; color:var(--ash); font-size: 13px; text-transform:none; border-bottom:1px solid transparent; padding-bottom:2px;">中文</a>
+        <span style="color:var(--gold);">中文</span>
       </div>
     </nav>
     <button class="hamburger" id="hamburger" aria-label="メニュー" onclick="toggleMenu()">
@@ -1214,17 +1214,17 @@
   </header>
 
   <div class="mobile-nav" id="mobileNav">
-    <a href="#about" onclick="closeMenu()">About</a>
-    <a href="#products" onclick="closeMenu()">Business</a>
-    <a href="#gallery" onclick="closeMenu()">Gallery</a>
-    <a href="#access" onclick="closeMenu()">Access</a>
-    <a href="http://www.yamamaotong.com" target="_blank" onclick="closeMenu()">Website ↗</a>
+    <a href="#about" onclick="closeMenu()">关于我们</a>
+    <a href="#products" onclick="closeMenu()">业务内容</a>
+    <a href="#gallery" onclick="closeMenu()">图集展示</a>
+    <a href="#access" onclick="closeMenu()">访问地址</a>
+    <a href="http://www.yamamaotong.com" target="_blank" onclick="closeMenu()">企业网站 ↗</a>
     <div style="padding: 14px 28px; font-size: 13px; color: var(--ash);">
-      <span style="color:var(--gold);">日文</span>
-      <span style="margin:0 12px;">|</span>
-      <a href="index_zh.html"
+      <a href="index.html"
         style="display:inline; padding:0; border:none; letter-spacing:0; font-size: 13px; text-transform:none;"
-        onclick="closeMenu()">中文</a>
+        onclick="closeMenu()">日文</a>
+      <span style="margin:0 12px;">|</span>
+      <span style="color:var(--gold);">中文</span>
     </div>
   </div>
 
@@ -1253,8 +1253,8 @@
         <div class="slide-bg" style="background-color:#1e2a1e;">
         </div>
         <div class="slide-content">
-          <div class="slide-tag" style="margin-bottom:32px; font-size:20px;">会社紹介 — Company Profile</div>
-          <div class="slide-label">弊社は2010年に設立した100%日系独資の機械商社で、中国東北部の大連に所在します。</div>
+          <div class="slide-tag" style="margin-bottom:32px; font-size:20px;">公司简介 — Company Profile</div>
+          <div class="slide-label">我们是一家成立于2010年的100%日资机械贸易公司，位于中国东北的大连市。</div>
         </div>
       </div>
 
@@ -1262,7 +1262,7 @@
         <div class="slide-bg" style="background-color:#1e2a1e;">
         </div>
         <div class="slide-content" style="justify-content:center; padding-bottom:80px;">
-          <div class="slide-tag" style="margin-bottom:32px; font-size:20px;">事業内容 — Business Overview</div>
+          <div class="slide-tag" style="margin-bottom:32px; font-size:20px;">业务内容 — Business Overview</div>
           <ol style="list-style:none; display:flex; flex-direction:column; gap:28px; max-width:680px;">
             <li style="display:flex; gap:20px; align-items:flex-start;">
               <span
@@ -1270,8 +1270,8 @@
               <div>
                 <div
                   style="font-family:'Noto Serif JP',serif; font-size:18px; color:#fff; font-weight:300; line-height:1.8; letter-spacing:0.08em;">
-                  日本向け・中国国内向けの部品加工請負<br><span
-                    style="font-size:15px; color:rgba(255,255,255,0.6);">（中国国内の協力工場にて対応）</span></div>
+                  面向日本及中国国内的零部件加工承接<br><span style="font-size:15px; color:rgba(255,255,255,0.6);">（由中国国内的合作工厂生产）</span>
+                </div>
                 <div
                   style="font-size:12px; color:rgba(255,255,255,0.38); letter-spacing:0.18em; margin-top:4px; text-transform:uppercase;">
                   Parts Processing for Japan &amp; China via Partner Factories</div>
@@ -1283,7 +1283,7 @@
               <div>
                 <div
                   style="font-family:'Noto Serif JP',serif; font-size:18px; color:#fff; font-weight:300; line-height:1.8; letter-spacing:0.08em;">
-                  搬送機・検査機・洗浄機等の専用設計機の販売</div>
+                  搬运机・检测机・清洗机等设备的定制研发及销售</div>
                 <div
                   style="font-size:12px; color:rgba(255,255,255,0.38); letter-spacing:0.18em; margin-top:4px; text-transform:uppercase;">
                   Custom Conveyors, Inspection &amp; Cleaning Systems</div>
@@ -1295,7 +1295,7 @@
               <div>
                 <div
                   style="font-family:'Noto Serif JP',serif; font-size:18px; color:#fff; font-weight:300; line-height:1.8; letter-spacing:0.08em;">
-                  日本製・中国製の工作機械及び周辺機器の販売</div>
+                  日本产・中国产工作机床及周边设备的销售</div>
                 <div
                   style="font-size:12px; color:rgba(255,255,255,0.38); letter-spacing:0.18em; margin-top:4px; text-transform:uppercase;">
                   Sales of Japanese &amp; Chinese Machine Tools</div>
@@ -1309,7 +1309,7 @@
         <div class="slide-bg" style="background-color:#141a14;"></div>
         <div class="slide-content"
           style="justify-content:center; padding-top:40px; padding-bottom:60px; overflow-y:auto;">
-          <div class="slide-tag" style="margin-bottom:20px; font-size:15px; letter-spacing:0.28em;">各種加工品の製作を承ります</div>
+          <div class="slide-tag" style="margin-bottom:20px; font-size:15px; letter-spacing:0.28em;">承接各类加工件的定制化生产</div>
           <div style="max-width:720px; display:flex; flex-direction:column; gap:18px;">
 
             <!-- Concern box -->
@@ -1317,42 +1317,42 @@
               style="border-left:2px solid var(--gold); padding:16px 20px; background:rgba(184,150,110,0.07); border-radius:0 4px 4px 0;">
               <div
                 style="font-size:11px; letter-spacing:0.3em; text-transform:uppercase; color:var(--gold-light); margin-bottom:10px;">
-                よくあるご不安 — Common Concerns</div>
+                常见顾虑 — Common Concerns</div>
               <div
                 style="font-family:'Noto Serif JP',serif; font-size:16px; color:rgba(255,255,255,0.75); line-height:2; letter-spacing:0.07em;">
-                中国での部品製作を検討したいが、品質・納期・支払い等でトラブルにならないか心配…<br>
-                言葉の問題で、正しく意思疎通が取れるか心配…
+                想在中国制作零部件，但担心质量、交货期、付款等环节出现纠纷……<br>
+                因为语言障碍，担心无法进行准确的交流沟通……
               </div>
             </div>
 
             <!-- Response -->
             <div
               style="font-family:'Noto Serif JP',serif; font-size:16px; color:rgba(255,255,255,0.82); line-height:2.1; letter-spacing:0.07em;">
-              そのようなお客様に、<span style="color:var(--gold-light);">誠意を持って対応</span>させて頂きます。<br>
-              弊社提携先はすべて近隣に所在しており、加工状況・納期・品質を定期的に確認・ご報告いたします。詳細なお打合せが必要な場合はWeb等にて迅速に対応可能です。
+              对于您的上述顾虑，我们将用<span style="color:var(--gold-light);">诚意和专业为您解忧</span>。<br>
+              我们的合作工厂均位于大连周边，方便我们定期确认并向您汇报加工进度、交货期及质量控制情况。如需进行详细深入的探讨，我们也可随时通过线上会议迅速响应。
             </div>
 
             <!-- Capabilities -->
             <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:2px;">
               <span
-                style="font-size:11px; letter-spacing:0.12em; color:var(--gold-light); border:1px solid rgba(255,255,255,0.15); padding:5px 12px; border-radius:2px;">単品・小ロット</span>
+                style="font-size:11px; letter-spacing:0.12em; color:var(--gold-light); border:1px solid rgba(255,255,255,0.15); padding:5px 12px; border-radius:2px;">单件・小批量</span>
               <span
-                style="font-size:11px; letter-spacing:0.12em; color:var(--gold-light); border:1px solid rgba(255,255,255,0.15); padding:5px 12px; border-radius:2px;">治具・金型部品</span>
+                style="font-size:11px; letter-spacing:0.12em; color:var(--gold-light); border:1px solid rgba(255,255,255,0.15); padding:5px 12px; border-radius:2px;">夹具・模具部件</span>
               <span
-                style="font-size:11px; letter-spacing:0.12em; color:var(--gold-light); border:1px solid rgba(255,255,255,0.15); padding:5px 12px; border-radius:2px;">熱処理・表面処理</span>
+                style="font-size:11px; letter-spacing:0.12em; color:var(--gold-light); border:1px solid rgba(255,255,255,0.15); padding:5px 12px; border-radius:2px;">热处理・表面处理</span>
               <span
-                style="font-size:11px; letter-spacing:0.12em; color:var(--gold-light); border:1px solid rgba(255,255,255,0.15); padding:5px 12px; border-radius:2px;">マシニングセンタ加工</span>
+                style="font-size:11px; letter-spacing:0.12em; color:var(--gold-light); border:1px solid rgba(255,255,255,0.15); padding:5px 12px; border-radius:2px;">加工中心加工</span>
               <span
                 style="font-size:11px; letter-spacing:0.12em; color:var(--gold-light); border:1px solid rgba(255,255,255,0.15); padding:5px 12px; border-radius:2px;">平面研磨</span>
               <span
-                style="font-size:11px; letter-spacing:0.12em; color:var(--gold-light); border:1px solid rgba(255,255,255,0.15); padding:5px 12px; border-radius:2px;">放電・ワイヤーカット</span>
+                style="font-size:11px; letter-spacing:0.12em; color:var(--gold-light); border:1px solid rgba(255,255,255,0.15); padding:5px 12px; border-radius:2px;">放电・线切割</span>
               <span
-                style="font-size:11px; letter-spacing:0.12em; color:var(--gold-light); border:1px solid rgba(255,255,255,0.15); padding:5px 12px; border-radius:2px;">精密部品加工</span>
+                style="font-size:11px; letter-spacing:0.12em; color:var(--gold-light); border:1px solid rgba(255,255,255,0.15); padding:5px 12px; border-radius:2px;">精密零部件加工</span>
             </div>
 
             <div
               style="font-family:'Noto Serif JP',serif; font-size:15px; color:rgba(255,255,255,0.82); letter-spacing:0.1em; margin-top:4px;">
-              是非ともお問合せを賜りたくお願い致します。
+              随时欢迎您的咨询与洽谈。
             </div>
           </div>
         </div>
@@ -1374,140 +1374,140 @@
     <div class="section-header reveal">
       <div>
         <div class="section-title">Gallery</div>
-        <div class="section-title-jp">ギャラリー</div>
+        <div class="section-title-jp">图集展示</div>
       </div>
     </div>
 
-    <div class="section-num">01 工作機械の販売: お客様ご要望の価格・性能に合致する工作機械及を選定して対応致します。</div>
+    <div class="section-num">01 工作机床销售: 我们将为您甄选符合您价位、性能要求的优质工作机床设备。</div>
     <div class="gallery-grid" id="galleryGrid">
       <!-- Row 1: Work Machines -->
       <div class="gallery-item" onclick="openLightbox(this)">
-        <img src="./img/gallery/work-machine-1.png" alt="工作機械" loading="lazy">
-        <div class="gallery-placeholder">工作機械</div>
+        <img src="./img/gallery/work-machine-1.png" alt="工作机床" loading="lazy">
+        <div class="gallery-placeholder">工作机床</div>
       </div>
       <div class="gallery-item" onclick="openLightbox(this)">
-        <img src="./img/gallery/work-machine-2.png" alt="工作機械" loading="lazy">
-        <div class="gallery-placeholder">工作機械</div>
+        <img src="./img/gallery/work-machine-2.png" alt="工作机床" loading="lazy">
+        <div class="gallery-placeholder">工作机床</div>
       </div>
       <div class="gallery-item" onclick="openLightbox(this)">
-        <img src="./img/gallery/work-machine-3.jpg" alt="工作機械" loading="lazy">
-        <div class="gallery-placeholder">工作機械</div>
+        <img src="./img/gallery/work-machine-3.jpg" alt="工作机床" loading="lazy">
+        <div class="gallery-placeholder">工作机床</div>
       </div>
       <div class="gallery-item" onclick="openLightbox(this)">
-        <img src="./img/gallery/work-machine-4.jpg" alt="工作機械" loading="lazy">
-        <div class="gallery-placeholder">工作機械</div>
+        <img src="./img/gallery/work-machine-4.jpg" alt="工作机床" loading="lazy">
+        <div class="gallery-placeholder">工作机床</div>
       </div>
       <div class="gallery-item" onclick="openLightbox(this)">
-        <img src="./img/gallery/work-machine-5.jpg" alt="工作機械" loading="lazy">
-        <div class="gallery-placeholder">工作機械</div>
+        <img src="./img/gallery/work-machine-5.jpg" alt="工作机床" loading="lazy">
+        <div class="gallery-placeholder">工作机床</div>
       </div>
       <div class="gallery-item" onclick="openLightbox(this)">
-        <img src="./img/gallery/work-machine-6.png" alt="工作機械" loading="lazy">
-        <div class="gallery-placeholder">工作機械</div>
+        <img src="./img/gallery/work-machine-6.png" alt="工作机床" loading="lazy">
+        <div class="gallery-placeholder">工作机床</div>
       </div>
     </div>
     <br>
-    <div class="section-num">02 専用機械・省力化設備の販売: 各種搬送装置・検査機・洗浄機・省力化機器等、お客様のご要望に対応致します。</div>
+    <div class="section-num">02 专用机械・自动化设备销售: 根据您的需求，提供各类搬运装置、检测机、清洗机及省力化综合设备。</div>
     <div class="gallery-grid row2">
       <!-- Row 2: Expert Machines -->
       <div class="gallery-item" onclick="openLightbox(this)">
-        <img src="./img/gallery/expert-machine-1.jpg" alt="専用機械・省力化設備">
-        <div class="gallery-placeholder">専用機械・省力化設備</div>
+        <img src="./img/gallery/expert-machine-1.jpg" alt="专用机械・自动化设备">
+        <div class="gallery-placeholder">专用机械・自动化设备</div>
       </div>
       <div class="gallery-item" onclick="openLightbox(this)">
-        <img src="./img/gallery/expert-machine-2.jpg" alt="専用機械・省力化設備">
-        <div class="gallery-placeholder">専用機械・省力化設備</div>
+        <img src="./img/gallery/expert-machine-2.jpg" alt="专用机械・自动化设备">
+        <div class="gallery-placeholder">专用机械・自动化设备</div>
       </div>
       <div class="gallery-item" onclick="openLightbox(this)">
-        <img src="./img/gallery/expert-machine-3.jpg" alt="専用機械・省力化設備">
-        <div class="gallery-placeholder">専用機械・省力化設備</div>
+        <img src="./img/gallery/expert-machine-3.jpg" alt="专用机械・自动化设备">
+        <div class="gallery-placeholder">专用机械・自动化设备</div>
       </div>
       <div class="gallery-item" onclick="openLightbox(this)">
-        <img src="./img/gallery/expert-machine-4.jpg" alt="専用機械・省力化設備">
-        <div class="gallery-placeholder">専用機械・省力化設備</div>
+        <img src="./img/gallery/expert-machine-4.jpg" alt="专用机械・自动化设备">
+        <div class="gallery-placeholder">专用机械・自动化设备</div>
       </div>
       <div class="gallery-item" onclick="openLightbox(this)">
-        <img src="./img/gallery/expert-machine-5.jpg" alt="専用機械・省力化設備">
-        <div class="gallery-placeholder">専用機械・省力化設備</div>
+        <img src="./img/gallery/expert-machine-5.jpg" alt="专用机械・自动化设备">
+        <div class="gallery-placeholder">专用机械・自动化设备</div>
       </div>
     </div>
     <br>
-    <div class="section-num">03 部品加工及び組立(提携協力工場にて): 各種部品・治具・装置の加工、組立等を請け負います。</div>
+    <div class="section-num">03 零部件加工及组装(由合作工厂提供): 承揽各类规格的零部件、夹具及装置的加工装配。</div>
     <div class="gallery-grid row3">
       <!-- Row 3: Parts Tailoring-->
       <div class="gallery-item" onclick="openLightbox(this)">
-        <img src="./img/gallery/parts-tailoring-1.jpg" alt="部品加工及び組立" loading="lazy">
-        <div class="gallery-placeholder">部品加工及び組立</div>
+        <img src="./img/gallery/parts-tailoring-1.jpg" alt="零部件加工及组装" loading="lazy">
+        <div class="gallery-placeholder">零部件加工及组装</div>
       </div>
       <div class="gallery-item" onclick="openLightbox(this)">
-        <img src="./img/gallery/parts-tailoring-2.jpg" alt="部品加工及び組立" loading="lazy">
-        <div class="gallery-placeholder">部品加工及び組立</div>
+        <img src="./img/gallery/parts-tailoring-2.jpg" alt="零部件加工及组装" loading="lazy">
+        <div class="gallery-placeholder">零部件加工及组装</div>
       </div>
       <div class="gallery-item" onclick="openLightbox(this)">
-        <img src="./img/gallery/parts-tailoring-3.jpg" alt="部品加工及び組立" loading="lazy">
-        <div class="gallery-placeholder">部品加工及び組立</div>
+        <img src="./img/gallery/parts-tailoring-3.jpg" alt="零部件加工及组装" loading="lazy">
+        <div class="gallery-placeholder">零部件加工及组装</div>
       </div>
       <div class="gallery-item" onclick="openLightbox(this)">
-        <img src="./img/gallery/parts-tailoring-4.jpg" alt="部品加工及び組立" loading="lazy">
-        <div class="gallery-placeholder">部品加工及び組立</div>
+        <img src="./img/gallery/parts-tailoring-4.jpg" alt="零部件加工及组装" loading="lazy">
+        <div class="gallery-placeholder">零部件加工及组装</div>
       </div>
       <div class="gallery-item" onclick="openLightbox(this)">
-        <img src="./img/gallery/parts-tailoring-5.jpg" alt="部品加工及び組立" loading="lazy">
-        <div class="gallery-placeholder">部品加工及び組立</div>
+        <img src="./img/gallery/parts-tailoring-5.jpg" alt="零部件加工及组装" loading="lazy">
+        <div class="gallery-placeholder">零部件加工及组装</div>
       </div>
       <div class="gallery-item" onclick="openLightbox(this)">
-        <img src="./img/gallery/parts-tailoring-6.jpg" alt="部品加工及び組立" loading="lazy">
-        <div class="gallery-placeholder">部品加工及び組立</div>
+        <img src="./img/gallery/parts-tailoring-6.jpg" alt="零部件加工及组装" loading="lazy">
+        <div class="gallery-placeholder">零部件加工及组装</div>
       </div>
       <div class="gallery-item" onclick="openLightbox(this)">
-        <img src="./img/gallery/parts-tailoring-7.jpg" alt="部品加工及び組立" loading="lazy">
-        <div class="gallery-placeholder">部品加工及び組立</div>
+        <img src="./img/gallery/parts-tailoring-7.jpg" alt="零部件加工及组装" loading="lazy">
+        <div class="gallery-placeholder">零部件加工及组装</div>
       </div>
       <div class="gallery-item" onclick="openLightbox(this)">
-        <img src="./img/gallery/parts-tailoring-8.jpg" alt="部品加工及び組立" loading="lazy">
-        <div class="gallery-placeholder">部品加工及び組立</div>
+        <img src="./img/gallery/parts-tailoring-8.jpg" alt="零部件加工及组装" loading="lazy">
+        <div class="gallery-placeholder">零部件加工及组装</div>
       </div>
       <div class="gallery-item" onclick="openLightbox(this)">
-        <img src="./img/gallery/parts-tailoring-9.jpg" alt="部品加工及び組立" loading="lazy">
-        <div class="gallery-placeholder">部品加工及び組立</div>
+        <img src="./img/gallery/parts-tailoring-9.jpg" alt="零部件加工及组装" loading="lazy">
+        <div class="gallery-placeholder">零部件加工及组装</div>
       </div>
       <div class="gallery-item" onclick="openLightbox(this)">
-        <img src="./img/gallery/parts-tailoring-10.jpg" alt="部品加工及び組立" loading="lazy">
-        <div class="gallery-placeholder">部品加工及び組立</div>
+        <img src="./img/gallery/parts-tailoring-10.jpg" alt="零部件加工及组装" loading="lazy">
+        <div class="gallery-placeholder">零部件加工及组装</div>
       </div>
       <div class="gallery-item" onclick="openLightbox(this)">
-        <img src="./img/gallery/parts-tailoring-11.jpg" alt="部品加工及び組立" loading="lazy">
-        <div class="gallery-placeholder">部品加工及び組立</div>
+        <img src="./img/gallery/parts-tailoring-11.jpg" alt="零部件加工及组装" loading="lazy">
+        <div class="gallery-placeholder">零部件加工及组装</div>
       </div>
     </div>
     <br>
     <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 3px; margin-bottom: 12px;">
-      <div class="section-num">▷ 両端加工CNC旋盤</div>
-      <div class="section-num">▷ AUTO LOADER</div>
-      <div class="section-num">▷ 専用機</div>
-      <div class="section-num">▷ 部品加工</div>
+      <div class="section-num">▷ 双端面加工数控车床</div>
+      <div class="section-num">▷ 自动上下料机</div>
+      <div class="section-num">▷ 专用机器</div>
+      <div class="section-num">▷ 零部件加工</div>
     </div>
     <div class="gallery-grid row4"
       style="margin-top: 3px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 3px;">
       <div class="gallery-item video-item" onclick="openLightbox(this)">
         <img src="./img/gallery/cnc-preview.jpg" alt="Video Preview" class="preview-img">
-        <video src="./img/gallery/cnc.mp4" preload="none" playsinline alt="両端加工CNC旋盤"></video>
-        <div class="gallery-placeholder">両端加工CNC旋盤</div>
+        <video src="./img/gallery/cnc.mp4" preload="none" playsinline alt="双端面加工数控车床"></video>
+        <div class="gallery-placeholder">双端面加工数控车床</div>
       </div>
       <div class="gallery-item video-item" onclick="openLightbox(this)">
         <img src="./img/gallery/auto-loader-preview.jpg" alt="Video Preview" class="preview-img">
-        <video src="./img/gallery/auto-loader.mp4" preload="none" playsinline alt="AUTO LOADER"></video>
-        <div class="gallery-placeholder">AUTO LOADER</div>
+        <video src="./img/gallery/auto-loader.mp4" preload="none" playsinline alt="自动上下料机"></video>
+        <div class="gallery-placeholder">自动上下料机</div>
       </div>
       <div class="gallery-item video-item" onclick="openLightbox(this)">
         <img src="./img/gallery/expert-machine-preview.jpg" alt="Video Preview" class="preview-img">
-        <video src="./img/gallery/expert-machine.mp4" preload="none" playsinline alt="専用機"></video>
-        <div class="gallery-placeholder">専用機</div>
+        <video src="./img/gallery/expert-machine.mp4" preload="none" playsinline alt="专用机器"></video>
+        <div class="gallery-placeholder">专用机器</div>
       </div>
       <div class="gallery-item video-item" onclick="openLightbox(this)">
         <img src="./img/gallery/parts-tailoring-preview.jpg" alt="Video Preview" class="preview-img">
-        <video src="./img/gallery/parts-tailoring.mp4" preload="none" playsinline alt="部品加工"></video>
-        <div class="gallery-placeholder">部品加工</div>
+        <video src="./img/gallery/parts-tailoring.mp4" preload="none" playsinline alt="零部件加工"></video>
+        <div class="gallery-placeholder">零部件加工</div>
       </div>
     </div>
   </section>
@@ -1518,7 +1518,7 @@
       <div class="section-header">
         <div>
           <div class="section-title">Access</div>
-          <div class="section-title-jp">アクセス・所在地</div>
+          <div class="section-title-jp">交通・位置</div>
         </div>
       </div>
     </div>
@@ -1536,8 +1536,7 @@
     <div class="address-item">
       <span class="address-label">Address</span>
       <span class="address-value">
-        大連市金馬路君悦豪庭152<br>
-        10-12室 大連経済技術開発区<br>
+        大连开发区金马路152号君越豪庭1012室<br>
         ROOM 10-12, JUNYUE HAO TING 152, JINMA ROAD<br>
         DALIAN ECONOMIC &amp; TECHNICAL DEVELOPMENT ZONE
       </span>
@@ -1550,21 +1549,21 @@
       </span>
     </div>
     <div class="address-item">
-      <span class="address-label">Contact (JP)</span>
+      <span class="address-label">Contact (CN)</span>
       <span class="address-value">
-        《日本側連絡窓口》<br>
-        担当：江見<br>
-        E-mail : <a href="mailto:c_emi_yamamoto@yahoo.co.jp"
-          style="color:inherit; text-decoration:none;">c_emi_yamamoto@yahoo.co.jp</a>
+        《中方联系窗口》<br>
+        负责人：王立华<br>
+        E-mail : <a href="mailto:wangllijp@yahoo.co.jp"
+          style="color:inherit; text-decoration:none;">wangllijp@yahoo.co.jp</a>
       </span>
     </div>
     <div class="address-item">
-      <span class="address-label">Contact (CN)</span>
+      <span class="address-label">Contact (JP)</span>
       <span class="address-value">
-        《中国側連絡窓口》<br>
-        担当：王立華<br>
-        E-mail : <a href="mailto:wangllijp@yahoo.co.jp"
-          style="color:inherit; text-decoration:none;">wangllijp@yahoo.co.jp</a>
+        《日方联系窗口》<br>
+        负责人：江见<br>
+        E-mail : <a href="mailto:c_emi_yamamoto@yahoo.co.jp"
+          style="color:inherit; text-decoration:none;">c_emi_yamamoto@yahoo.co.jp</a>
       </span>
     </div>
     <div class="address-item">
@@ -1733,7 +1732,7 @@
     }
     function addMapOverlay() {
       var markers = [
-        { content: "大連市金馬路君悦豪庭152 1012室", title: "雅玛茂通（大连）贸易有限公司", imageOffset: { width: 0, height: 3 }, position: { lat: 39.053946, lng: 121.77526 } }
+        { content: "大连开发区金马路152号君越豪庭1012室", title: "雅玛茂通（大连）贸易有限公司", imageOffset: { width: 0, height: 3 }, position: { lat: 39.053946, lng: 121.77526 } }
       ];
       for (var index = 0; index < markers.length; index++) {
         var point = new BMap.Point(markers[index].position.lng, markers[index].position.lat);
