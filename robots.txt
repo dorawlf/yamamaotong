@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.yamamaotong.com/sitemap.xml
+
+# Prevent indexing of any staging or temp files (if used)
+Disallow: /cgi-bin/
+Disallow: /tmp/

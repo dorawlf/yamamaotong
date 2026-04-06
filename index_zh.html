@@ -19,6 +19,9 @@
   </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="img/favicon.ico">
+  <link rel="alternate" hreflang="zh-CN" href="https://www.yamamaotong.com/index_zh.html">
+  <link rel="alternate" hreflang="ja" href="https://www.yamamaotong.com/">
+  <link rel="alternate" hreflang="x-default" href="https://www.yamamaotong.com/">
   <title>雅玛茂通（大连）贸易有限公司 | YAMAMOTO(DALIAN)TRADING CO.,LTD</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link
@@ -515,6 +518,11 @@
       margin-top: 3px;
     }
 
+    .gallery-grid.row4 {
+      margin-top: 24px;
+      row-gap: 20px;
+    }
+
     .gallery-item {
       aspect-ratio: 4/3;
       overflow: hidden;
@@ -644,6 +652,40 @@
 
     .lb-close:hover {
       opacity: 1;
+    }
+
+    .lb-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(15, 15, 15, 0.4);
+      border: none;
+      color: #fff;
+      font-size: 32px;
+      font-weight: 300;
+      cursor: pointer;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      opacity: 0.7;
+      transition: opacity 0.2s, background 0.2s;
+      z-index: 10;
+    }
+
+    .lb-nav:hover {
+      opacity: 1;
+      background: rgba(15, 15, 15, 0.8);
+    }
+
+    .lb-prev {
+      left: -64px;
+    }
+
+    .lb-next {
+      right: -64px;
     }
 
     /* ── MAP ── */
@@ -1128,6 +1170,14 @@
         top: -36px;
         font-size: 20px;
       }
+
+      .lb-prev {
+        left: 4px;
+      }
+
+      .lb-next {
+        right: 4px;
+      }
     }
   </style>
   <script src="https://webapi.amap.com/loader.js"></script>
@@ -1159,19 +1209,19 @@
 
             infoWindow.open(amapInstance);
 
-            AMap.plugin('AMap.Scale', function() {
-                var scale = new AMap.Scale();
-                amapInstance.addControl(scale);
+            AMap.plugin('AMap.Scale', function () {
+              var scale = new AMap.Scale();
+              amapInstance.addControl(scale);
             });
 
-            AMap.plugin(['AMap.ToolBar'], function() {
-                var toolbar = new AMap.ToolBar({
-                    visible: true,
-                    position: 'LT' // 控件位置：RB (右下), RT (右上), LB (左下), LT (左上)
-                });
-                amapInstance.addControl(toolbar);
+            AMap.plugin(['AMap.ToolBar'], function () {
+              var toolbar = new AMap.ToolBar({
+                visible: true,
+                position: 'LT' // 控件位置：RB (右下), RT (右上), LB (左下), LT (左上)
+              });
+              amapInstance.addControl(toolbar);
             });
-            
+
           }
         })
         .catch((e) => {
@@ -1396,11 +1446,11 @@
     <div class="gallery-grid" id="galleryGrid">
       <!-- Row 1: Work Machines -->
       <div class="gallery-item" onclick="openLightbox(this)">
-        <img src="./img/gallery/work-machine-1.png" alt="工作机床" loading="lazy">
+        <img src="./img/gallery/work-machine-1.jpg" alt="工作机床" loading="lazy">
         <div class="gallery-placeholder">工作机床</div>
       </div>
       <div class="gallery-item" onclick="openLightbox(this)">
-        <img src="./img/gallery/work-machine-2.png" alt="工作机床" loading="lazy">
+        <img src="./img/gallery/work-machine-2.jpg" alt="工作机床" loading="lazy">
         <div class="gallery-placeholder">工作机床</div>
       </div>
       <div class="gallery-item" onclick="openLightbox(this)">
@@ -1416,7 +1466,15 @@
         <div class="gallery-placeholder">工作机床</div>
       </div>
       <div class="gallery-item" onclick="openLightbox(this)">
-        <img src="./img/gallery/work-machine-6.png" alt="工作机床" loading="lazy">
+        <img src="./img/gallery/work-machine-6.jpg" alt="工作机床" loading="lazy">
+        <div class="gallery-placeholder">工作机床</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="./img/gallery/work-machine-7.jpg" alt="工作机床" loading="lazy">
+        <div class="gallery-placeholder">工作机床</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="./img/gallery/work-machine-8.jpg" alt="工作机床" loading="lazy">
         <div class="gallery-placeholder">工作机床</div>
       </div>
     </div>
@@ -1495,33 +1553,56 @@
       </div>
     </div>
     <br>
-    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 3px; margin-bottom: 12px;">
-      <div class="section-num">▷ 双端面加工数控车床</div>
-      <div class="section-num">▷ 自动上下料机</div>
-      <div class="section-num">▷ 专用机器</div>
-      <div class="section-num">▷ 零部件加工</div>
-    </div>
-    <div class="gallery-grid row4"
-      style="margin-top: 3px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 3px;">
-      <div class="gallery-item video-item" onclick="openLightbox(this)">
-        <img src="./img/gallery/cnc-preview.jpg" alt="Video Preview" class="preview-img">
-        <video src="./img/gallery/cnc.mp4" preload="none" playsinline alt="双端面加工数控车床"></video>
-        <div class="gallery-placeholder">双端面加工数控车床</div>
+    <div class="gallery-grid row4">
+      <div class="video-card">
+        <div class="section-num"
+          style="font-size: 13px; margin-bottom: 6px; letter-spacing: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+          ▷ 双头加工数控车床</div>
+        <div class="gallery-item video-item" onclick="openLightbox(this)">
+          <img src="./img/gallery/cnc-preview.jpg" alt="Video Preview" class="preview-img">
+          <video src="./img/gallery/cnc.mp4" preload="none" playsinline alt="双头加工数控车床"></video>
+          <div class="gallery-placeholder">双头加工数控车床</div>
+        </div>
       </div>
-      <div class="gallery-item video-item" onclick="openLightbox(this)">
-        <img src="./img/gallery/auto-loader-preview.jpg" alt="Video Preview" class="preview-img">
-        <video src="./img/gallery/auto-loader.mp4" preload="none" playsinline alt="自动上下料机"></video>
-        <div class="gallery-placeholder">自动上下料机</div>
+      <div class="video-card">
+        <div class="section-num"
+          style="font-size: 13px; margin-bottom: 6px; letter-spacing: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+          ▷ GL自动装载机</div>
+        <div class="gallery-item video-item" onclick="openLightbox(this)">
+          <img src="./img/gallery/gl-loader-preview.jpg" alt="Video Preview" class="preview-img">
+          <video src="./img/gallery/gl-loader.mp4" preload="none" playsinline alt="GL自动装载机"></video>
+          <div class="gallery-placeholder">GL自动装载机</div>
+        </div>
       </div>
-      <div class="gallery-item video-item" onclick="openLightbox(this)">
-        <img src="./img/gallery/expert-machine-preview.jpg" alt="Video Preview" class="preview-img">
-        <video src="./img/gallery/expert-machine.mp4" preload="none" playsinline alt="专用机器"></video>
-        <div class="gallery-placeholder">专用机器</div>
+      <div class="video-card">
+        <div class="section-num"
+          style="font-size: 13px; margin-bottom: 6px; letter-spacing: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+          ▷ 棒材输送装置</div>
+        <div class="gallery-item video-item" onclick="openLightbox(this)">
+          <img src="./img/gallery/bar-feeder-preview.jpg" alt="Video Preview" class="preview-img">
+          <video src="./img/gallery/bar-feeder.mp4" preload="none" playsinline alt="棒材输送装置"></video>
+          <div class="gallery-placeholder">棒材输送装置</div>
+        </div>
       </div>
-      <div class="gallery-item video-item" onclick="openLightbox(this)">
-        <img src="./img/gallery/parts-tailoring-preview.jpg" alt="Video Preview" class="preview-img">
-        <video src="./img/gallery/parts-tailoring.mp4" preload="none" playsinline alt="零部件加工"></video>
-        <div class="gallery-placeholder">零部件加工</div>
+      <div class="video-card">
+        <div class="section-num"
+          style="font-size: 13px; margin-bottom: 6px; letter-spacing: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+          ▷ 合作工厂实景</div>
+        <div class="gallery-item video-item" onclick="openLightbox(this)">
+          <img src="./img/gallery/cooperation-preview.jpg" alt="Video Preview" class="preview-img">
+          <video src="./img/gallery/cooperation.mp4" preload="none" playsinline alt="合作工厂实景"></video>
+          <div class="gallery-placeholder">合作工厂实景</div>
+        </div>
+      </div>
+      <div class="video-card">
+        <div class="section-num"
+          style="font-size: 13px; margin-bottom: 6px; letter-spacing: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+          ▷ 去毛刺机器人</div>
+        <div class="gallery-item video-item" onclick="openLightbox(this)">
+          <img src="./img/gallery/robot-preview.jpg" alt="Video Preview" class="preview-img">
+          <video src="./img/gallery/robot.mp4" preload="none" playsinline alt="去毛刺机器人"></video>
+          <div class="gallery-placeholder">去毛刺机器人</div>
+        </div>
       </div>
     </div>
   </section>
@@ -1608,6 +1689,8 @@
   <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
     <div class="lightbox-inner">
       <button class="lb-close" onclick="closeLightbox()">✕</button>
+      <button class="lb-nav lb-prev" onclick="prevLightboxItem(event)">‹</button>
+      <button class="lb-nav lb-next" onclick="nextLightboxItem(event)">›</button>
       <img id="lbImg" src="" alt="" style="display:none;">
       <video id="lbVideo" src="" controls style="display:none;"></video>
       <div id="lbCaption"
@@ -1661,11 +1744,22 @@
     })();
 
     // ── LIGHTBOX ──
+    let currentLightboxIndex = -1;
+    let galleryItems = [];
+
     function openLightbox(el) {
+      galleryItems = Array.from(document.querySelectorAll('.gallery-item'));
+      currentLightboxIndex = galleryItems.indexOf(el);
+      const lb = document.getElementById('lightbox');
+      populateLightbox(el);
+      lb.classList.add('open');
+    }
+
+    function populateLightbox(el) {
+      if (!el) return;
       const img = el.querySelector('img');
       const video = el.querySelector('video');
       const placeholder = el.querySelector('.gallery-placeholder');
-      const lb = document.getElementById('lightbox');
       const lbImg = document.getElementById('lbImg');
       const lbVideo = document.getElementById('lbVideo');
       const lbCap = document.getElementById('lbCaption');
@@ -1680,7 +1774,7 @@
       if (el.classList.contains('video-item') && video) {
         lbVideo.src = video.src;
         lbVideo.style.display = 'block';
-        lbVideo.play();
+        lbVideo.play().catch(e => console.log('Auto-play prevented', e));
         lbCap.textContent = video.getAttribute('alt') || placeholder?.textContent || '';
       } else if (img) {
         lbImg.src = img.src;
@@ -1689,14 +1783,27 @@
       } else if (video) {
         lbVideo.src = video.src;
         lbVideo.style.display = 'block';
-        lbVideo.play();
+        lbVideo.play().catch(e => console.log('Auto-play prevented', e));
         lbCap.textContent = video.getAttribute('alt') || placeholder?.textContent || '';
       } else if (placeholder) {
         lbImg.src = '';
         lbImg.style.display = 'none';
         lbCap.textContent = placeholder.textContent;
       }
-      lb.classList.add('open');
+    }
+
+    function prevLightboxItem(e) {
+      if (e) e.stopPropagation();
+      if (galleryItems.length === 0) return;
+      currentLightboxIndex = (currentLightboxIndex - 1 + galleryItems.length) % galleryItems.length;
+      populateLightbox(galleryItems[currentLightboxIndex]);
+    }
+
+    function nextLightboxItem(e) {
+      if (e) e.stopPropagation();
+      if (galleryItems.length === 0) return;
+      currentLightboxIndex = (currentLightboxIndex + 1) % galleryItems.length;
+      populateLightbox(galleryItems[currentLightboxIndex]);
     }
 
     function closeLightbox(e) {
@@ -1710,7 +1817,12 @@
     }
 
     document.addEventListener('keydown', e => {
-      if (e.key === 'Escape') closeLightbox();
+      const lb = document.getElementById('lightbox');
+      if (lb && lb.classList.contains('open')) {
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowLeft') prevLightboxItem();
+        if (e.key === 'ArrowRight') nextLightboxItem();
+      }
     });
 
     // ── SCROLL REVEAL ──
